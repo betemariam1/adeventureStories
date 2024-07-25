@@ -1425,8 +1425,11 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 550.0),
                                               child: StreamBuilder<
-                                                  List<RevisedDbRecord>>(
-                                                stream: queryRevisedDbRecord(),
+                                                  List<StartedStoriesRecord>>(
+                                                stream:
+                                                    queryStartedStoriesRecord(
+                                                  parent: currentUserReference,
+                                                ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
@@ -1440,8 +1443,8 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                       ),
                                                     );
                                                   }
-                                                  List<RevisedDbRecord>
-                                                      padRevisedDbRecordList =
+                                                  List<StartedStoriesRecord>
+                                                      padStartedStoriesRecordList =
                                                       snapshot.data!;
 
                                                   return GridView.builder(
@@ -1463,392 +1466,366 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                     scrollDirection:
                                                         Axis.vertical,
                                                     itemCount:
-                                                        padRevisedDbRecordList
+                                                        padStartedStoriesRecordList
                                                             .length,
                                                     itemBuilder:
                                                         (context, padIndex) {
-                                                      final padRevisedDbRecord =
-                                                          padRevisedDbRecordList[
+                                                      final padStartedStoriesRecord =
+                                                          padStartedStoriesRecordList[
                                                               padIndex];
-                                                      return Container(
-                                                        width: 100.0,
-                                                        height: 120.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              'StoryChapter',
-                                                              queryParameters: {
-                                                                'chapter':
-                                                                    serializeParam(
-                                                                  padRevisedDbRecord
-                                                                      .chapterRef,
-                                                                  ParamType
-                                                                      .DocumentReference,
-                                                                ),
-                                                                'pageNumber':
-                                                                    serializeParam(
-                                                                  0,
-                                                                  ParamType.int,
-                                                                ),
-                                                              }.withoutNulls,
+                                                      return StreamBuilder<
+                                                          RevisedDbRecord>(
+                                                        stream: RevisedDbRecord
+                                                            .getDocument(
+                                                                padStartedStoriesRecord
+                                                                    .revisedDbRef!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child:
+                                                                  LinearProgressIndicator(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
                                                             );
-                                                          },
-                                                          child: Card(
-                                                            clipBehavior: Clip
-                                                                .antiAliasWithSaveLayer,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                            elevation: 4.0,
-                                                            shape:
-                                                                RoundedRectangleBorder(
+                                                          }
+
+                                                          final containerRevisedDbRecord =
+                                                              snapshot.data!;
+
+                                                          return Container(
+                                                            width: 100.0,
+                                                            height: 120.0,
+                                                            decoration:
+                                                                BoxDecoration(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
                                                                           8.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
                                                             ),
-                                                            child: Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Stack(
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'StoryChapter',
+                                                                  queryParameters:
+                                                                      {
+                                                                    'chapter':
+                                                                        serializeParam(
+                                                                      padStartedStoriesRecord
+                                                                          .chapterReference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                    'pageNumber':
+                                                                        serializeParam(
+                                                                      padStartedStoriesRecord
+                                                                          .chapterNumber,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'playing':
+                                                                        serializeParam(
+                                                                      true,
+                                                                      ParamType
+                                                                          .bool,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              },
+                                                              child: Card(
+                                                                clipBehavior: Clip
+                                                                    .antiAliasWithSaveLayer,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                elevation: 4.0,
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
+                                                                child: Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Stack(
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        if (padRevisedDbRecord
-                                                                            .isAdventure)
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: InkWell(
-                                                                                  splashColor: Colors.transparent,
-                                                                                  focusColor: Colors.transparent,
-                                                                                  hoverColor: Colors.transparent,
-                                                                                  highlightColor: Colors.transparent,
-                                                                                  onTap: () async {
-                                                                                    context.pushNamed(
-                                                                                      'StoryIntro',
-                                                                                      queryParameters: {
-                                                                                        'passStoryInto1': serializeParam(
-                                                                                          padRevisedDbRecord,
-                                                                                          ParamType.Document,
-                                                                                        ),
-                                                                                      }.withoutNulls,
-                                                                                      extra: <String, dynamic>{
-                                                                                        'passStoryInto1': padRevisedDbRecord,
-                                                                                      },
-                                                                                    );
-                                                                                  },
-                                                                                  child: Container(
-                                                                                    width: 361.0,
-                                                                                    height: 29.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).alternate,
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      'Choose Your Own Adventure Story',
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w500,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        if (!padRevisedDbRecord
-                                                                            .isAdventure)
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: InkWell(
-                                                                                  splashColor: Colors.transparent,
-                                                                                  focusColor: Colors.transparent,
-                                                                                  hoverColor: Colors.transparent,
-                                                                                  highlightColor: Colors.transparent,
-                                                                                  onTap: () async {
-                                                                                    context.pushNamed(
-                                                                                      'StoryIntro',
-                                                                                      queryParameters: {
-                                                                                        'passStoryInto1': serializeParam(
-                                                                                          padRevisedDbRecord,
-                                                                                          ParamType.Document,
-                                                                                        ),
-                                                                                      }.withoutNulls,
-                                                                                      extra: <String, dynamic>{
-                                                                                        'passStoryInto1': padRevisedDbRecord,
-                                                                                      },
-                                                                                    );
-                                                                                  },
-                                                                                  child: Container(
-                                                                                    width: 461.0,
-                                                                                    height: 29.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      'Read Along Story',
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              5.0,
-                                                                              0.0),
-                                                                          child:
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            if (containerRevisedDbRecord.isAdventure)
                                                                               Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Wrap(
-                                                                                spacing: 0.0,
-                                                                                runSpacing: 0.0,
-                                                                                alignment: WrapAlignment.start,
-                                                                                crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                direction: Axis.horizontal,
-                                                                                runAlignment: WrapAlignment.start,
-                                                                                verticalDirection: VerticalDirection.down,
-                                                                                clipBehavior: Clip.none,
+                                                                                mainAxisSize: MainAxisSize.max,
                                                                                 children: [
-                                                                                  Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 0.0, 5.0),
-                                                                                    child: Text(
-                                                                                      padRevisedDbRecord.storyName,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            fontSize: 14.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
-                                                                                          ),
+                                                                                  Flexible(
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          'StoryIntro',
+                                                                                          queryParameters: {
+                                                                                            'passStoryInto1': serializeParam(
+                                                                                              containerRevisedDbRecord,
+                                                                                              ParamType.Document,
+                                                                                            ),
+                                                                                          }.withoutNulls,
+                                                                                          extra: <String, dynamic>{
+                                                                                            'passStoryInto1': containerRevisedDbRecord,
+                                                                                          },
+                                                                                        );
+                                                                                      },
+                                                                                      child: Container(
+                                                                                        width: 361.0,
+                                                                                        height: 29.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                        ),
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                        child: Text(
+                                                                                          'Choose Your Own Adventure Story',
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Poppins',
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w500,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
-                                                                          child:
+                                                                            if (!containerRevisedDbRecord.isAdventure)
                                                                               Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: Align(
-                                                                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                  child: SizedBox(
-                                                                                    height: 144.0,
-                                                                                    child: Stack(
-                                                                                      children: [
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                          child: ClipRRect(
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                            child: Image.network(
-                                                                                              padRevisedDbRecord.cardImageSmall,
-                                                                                              width: double.infinity,
-                                                                                              height: 140.0,
-                                                                                              fit: BoxFit.cover,
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Flexible(
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          'StoryIntro',
+                                                                                          queryParameters: {
+                                                                                            'passStoryInto1': serializeParam(
+                                                                                              containerRevisedDbRecord,
+                                                                                              ParamType.Document,
                                                                                             ),
+                                                                                          }.withoutNulls,
+                                                                                          extra: <String, dynamic>{
+                                                                                            'passStoryInto1': containerRevisedDbRecord,
+                                                                                          },
+                                                                                        );
+                                                                                      },
+                                                                                      child: Container(
+                                                                                        width: 461.0,
+                                                                                        height: 29.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                        ),
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                        child: Text(
+                                                                                          'Read Along Story',
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Poppins',
+                                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                letterSpacing: 0.0,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 5.0, 0.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Wrap(
+                                                                                    spacing: 0.0,
+                                                                                    runSpacing: 0.0,
+                                                                                    alignment: WrapAlignment.start,
+                                                                                    crossAxisAlignment: WrapCrossAlignment.start,
+                                                                                    direction: Axis.horizontal,
+                                                                                    runAlignment: WrapAlignment.start,
+                                                                                    verticalDirection: VerticalDirection.down,
+                                                                                    clipBehavior: Clip.none,
+                                                                                    children: [
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 0.0, 5.0),
+                                                                                        child: Text(
+                                                                                          containerRevisedDbRecord.storyName,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Poppins',
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                fontSize: 14.0,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Flexible(
+                                                                                    child: Align(
+                                                                                      alignment: const AlignmentDirectional(0.0, -1.0),
+                                                                                      child: SizedBox(
+                                                                                        height: 144.0,
+                                                                                        child: Stack(
+                                                                                          children: [
+                                                                                            Align(
+                                                                                              alignment: const AlignmentDirectional(0.0, -1.0),
+                                                                                              child: ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  containerRevisedDbRecord.cardImageSmall,
+                                                                                                  width: double.infinity,
+                                                                                                  height: 140.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                            if (containerRevisedDbRecord.isNew == true)
+                                                                                              Padding(
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                                child: ClipRRect(
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                                  child: Image.asset(
+                                                                                                    'assets/images/NewPurple001.gif',
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    fit: BoxFit.cover,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Flexible(
+                                                                                    child: Wrap(
+                                                                                      spacing: 0.0,
+                                                                                      runSpacing: 0.0,
+                                                                                      alignment: WrapAlignment.start,
+                                                                                      crossAxisAlignment: WrapCrossAlignment.start,
+                                                                                      direction: Axis.horizontal,
+                                                                                      runAlignment: WrapAlignment.start,
+                                                                                      verticalDirection: VerticalDirection.down,
+                                                                                      clipBehavior: Clip.none,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                                                                                          child: Text(
+                                                                                            containerRevisedDbRecord.description.maybeHandleOverflow(
+                                                                                              maxChars: 60,
+                                                                                              replacement: '…',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Poppins',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                ),
                                                                                           ),
                                                                                         ),
-                                                                                        if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == false)
-                                                                                          Align(
-                                                                                            alignment: const AlignmentDirectional(0.89, 0.59),
-                                                                                            child: FlutterFlowIconButton(
-                                                                                              borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                              borderRadius: 20.0,
-                                                                                              borderWidth: 1.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                              icon: FaIcon(
-                                                                                                FontAwesomeIcons.heart,
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                size: 24.0,
-                                                                                              ),
-                                                                                              onPressed: () async {},
-                                                                                            ),
-                                                                                          ),
-                                                                                        if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
-                                                                                          Align(
-                                                                                            alignment: const AlignmentDirectional(0.89, 0.6),
-                                                                                            child: FlutterFlowIconButton(
-                                                                                              borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                              borderRadius: 20.0,
-                                                                                              borderWidth: 1.0,
-                                                                                              buttonSize: 40.0,
-                                                                                              fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                              icon: FaIcon(
-                                                                                                FontAwesomeIcons.solidHeart,
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                size: 24.0,
-                                                                                              ),
-                                                                                              onPressed: () async {},
-                                                                                            ),
-                                                                                          ),
-                                                                                        if (padRevisedDbRecord.isNew == true)
-                                                                                          Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                            child: ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.asset(
-                                                                                                'assets/images/NewPurple001.gif',
-                                                                                                width: 50.0,
-                                                                                                height: 50.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
                                                                                       ],
                                                                                     ),
                                                                                   ),
-                                                                                ),
+                                                                                ],
                                                                               ),
-                                                                            ],
-                                                                          ),
+                                                                            ),
+                                                                          ],
                                                                         ),
-                                                                        Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              15.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: Wrap(
-                                                                                  spacing: 0.0,
-                                                                                  runSpacing: 0.0,
-                                                                                  alignment: WrapAlignment.start,
-                                                                                  crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                  direction: Axis.horizontal,
-                                                                                  runAlignment: WrapAlignment.start,
-                                                                                  verticalDirection: VerticalDirection.down,
-                                                                                  clipBehavior: Clip.none,
-                                                                                  children: [
-                                                                                    Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                      child: Text(
-                                                                                        padRevisedDbRecord.description.maybeHandleOverflow(
-                                                                                          maxChars: 60,
-                                                                                          replacement: '…',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
+                                                                      ),
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
                                                                             0.98,
                                                                             0.98),
-                                                                    child:
-                                                                        FlutterFlowIconButton(
-                                                                      borderColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                      borderRadius:
-                                                                          20.0,
-                                                                      borderWidth:
-                                                                          1.0,
-                                                                      buttonSize:
-                                                                          40.0,
-                                                                      fillColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .accent1,
-                                                                      icon:
-                                                                          FaIcon(
-                                                                        FontAwesomeIcons
-                                                                            .trash,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
+                                                                        child:
+                                                                            FlutterFlowIconButton(
+                                                                          borderColor:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          borderRadius:
+                                                                              20.0,
+                                                                          borderWidth:
+                                                                              1.0,
+                                                                          buttonSize:
+                                                                              40.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).accent1,
+                                                                          icon:
+                                                                              FaIcon(
+                                                                            FontAwesomeIcons.trash,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await padStartedStoriesRecord.reference.delete();
+                                                                          },
+                                                                        ),
                                                                       ),
-                                                                      onPressed:
-                                                                          () {
-                                                                        print(
-                                                                            'IconButton pressed ...');
-                                                                      },
-                                                                    ),
+                                                                    ],
                                                                   ),
-                                                                ],
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ),
+                                                          );
+                                                        },
                                                       );
                                                     },
                                                   );

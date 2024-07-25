@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -283,30 +285,91 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                               onPressed: () async {
                                 if (storyChapterChaptersRecord.pages.length !=
                                     ((widget.pageNumber!) + 1)) {
-                                  context.pushNamed(
-                                    'StoryChapter',
-                                    queryParameters: {
-                                      'chapter': serializeParam(
-                                        widget.chapter,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'pageNumber': serializeParam(
-                                        (widget.pageNumber!) + 1,
-                                        ParamType.int,
-                                      ),
-                                      'playing': serializeParam(
-                                        FFAppState().isPlaying,
-                                        ParamType.bool,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.rightToLeft,
-                                      ),
-                                    },
-                                  );
+                                  _model.revisedDb =
+                                      await queryRevisedDbRecordOnce(
+                                    queryBuilder: (revisedDbRecord) =>
+                                        revisedDbRecord.where(
+                                      'chapterRef',
+                                      isEqualTo: widget.chapter,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
+                                  _model.stories =
+                                      await queryStartedStoriesRecordOnce(
+                                    parent: currentUserReference,
+                                    queryBuilder: (startedStoriesRecord) =>
+                                        startedStoriesRecord.where(
+                                      'revisedDbRef',
+                                      isEqualTo: _model.revisedDb?.reference,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
+                                  if (_model.stories?.reference != null) {
+                                    await _model.stories!.reference
+                                        .update(createStartedStoriesRecordData(
+                                      chapterNumber: (widget.pageNumber!) + 1,
+                                      createdDate: getCurrentTimestamp,
+                                    ));
+
+                                    context.pushNamed(
+                                      'StoryChapter',
+                                      queryParameters: {
+                                        'chapter': serializeParam(
+                                          widget.chapter,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'pageNumber': serializeParam(
+                                          (widget.pageNumber!) + 1,
+                                          ParamType.int,
+                                        ),
+                                        'playing': serializeParam(
+                                          FFAppState().isPlaying,
+                                          ParamType.bool,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                        ),
+                                      },
+                                    );
+                                  } else {
+                                    await StartedStoriesRecord.createDoc(
+                                            currentUserReference!)
+                                        .set(createStartedStoriesRecordData(
+                                      chapterReference: widget.chapter,
+                                      chapterNumber: (widget.pageNumber!) + 1,
+                                      createdDate: getCurrentTimestamp,
+                                      revisedDbRef: _model.revisedDb?.reference,
+                                    ));
+
+                                    context.pushNamed(
+                                      'StoryChapter',
+                                      queryParameters: {
+                                        'chapter': serializeParam(
+                                          widget.chapter,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'pageNumber': serializeParam(
+                                          (widget.pageNumber!) + 1,
+                                          ParamType.int,
+                                        ),
+                                        'playing': serializeParam(
+                                          FFAppState().isPlaying,
+                                          ParamType.bool,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                        ),
+                                      },
+                                    );
+                                  }
                                 } else {
                                   if (!storyChapterChaptersRecord
                                       .isLastChapter) {
@@ -345,6 +408,8 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                     );
                                   }
                                 }
+
+                                setState(() {});
                               },
                               text: 'Next Page',
                               options: FFButtonOptions(

@@ -13,6 +13,7 @@ import 'schema/onboarding_record.dart';
 import 'schema/read_along_stories_record.dart';
 import 'schema/future_features_record.dart';
 import 'schema/chapters_record.dart';
+import 'schema/started_stories_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -29,6 +30,7 @@ export 'schema/onboarding_record.dart';
 export 'schema/read_along_stories_record.dart';
 export 'schema/future_features_record.dart';
 export 'schema/chapters_record.dart';
+export 'schema/started_stories_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -321,6 +323,46 @@ Future<List<ChaptersRecord>> queryChaptersRecordOnce({
     queryCollectionOnce(
       ChaptersRecord.collection,
       ChaptersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query StartedStoriesRecords (as a Stream and as a Future).
+Future<int> queryStartedStoriesRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      StartedStoriesRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<StartedStoriesRecord>> queryStartedStoriesRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      StartedStoriesRecord.collection(parent),
+      StartedStoriesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<StartedStoriesRecord>> queryStartedStoriesRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      StartedStoriesRecord.collection(parent),
+      StartedStoriesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
