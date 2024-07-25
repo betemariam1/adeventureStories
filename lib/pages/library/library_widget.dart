@@ -1691,17 +1691,15 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                             crossAxisAlignment:
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
-                                                                              Align(
-                                                                                alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                child: SizedBox(
-                                                                                  width: 292.0,
-                                                                                  height: 144.0,
-                                                                                  child: Stack(
-                                                                                    children: [
-                                                                                      Align(
-                                                                                        alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                        child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              Flexible(
+                                                                                child: Align(
+                                                                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                                                                  child: SizedBox(
+                                                                                    height: 144.0,
+                                                                                    child: Stack(
+                                                                                      children: [
+                                                                                        Align(
+                                                                                          alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                           child: ClipRRect(
                                                                                             borderRadius: BorderRadius.circular(8.0),
                                                                                             child: Image.network(
@@ -1712,55 +1710,55 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                      if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == false)
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.89, 0.59),
-                                                                                          child: FlutterFlowIconButton(
-                                                                                            borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                            borderRadius: 20.0,
-                                                                                            borderWidth: 1.0,
-                                                                                            buttonSize: 40.0,
-                                                                                            fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                            icon: FaIcon(
-                                                                                              FontAwesomeIcons.heart,
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 24.0,
-                                                                                            ),
-                                                                                            onPressed: () async {},
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.89, 0.6),
-                                                                                          child: FlutterFlowIconButton(
-                                                                                            borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                            borderRadius: 20.0,
-                                                                                            borderWidth: 1.0,
-                                                                                            buttonSize: 40.0,
-                                                                                            fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                            icon: FaIcon(
-                                                                                              FontAwesomeIcons.solidHeart,
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 24.0,
-                                                                                            ),
-                                                                                            onPressed: () async {},
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (padRevisedDbRecord.isNew == true)
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                          child: ClipRRect(
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                            child: Image.asset(
-                                                                                              'assets/images/NewPurple001.gif',
-                                                                                              width: 50.0,
-                                                                                              height: 50.0,
-                                                                                              fit: BoxFit.cover,
+                                                                                        if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == false)
+                                                                                          Align(
+                                                                                            alignment: const AlignmentDirectional(0.89, 0.59),
+                                                                                            child: FlutterFlowIconButton(
+                                                                                              borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                              borderRadius: 20.0,
+                                                                                              borderWidth: 1.0,
+                                                                                              buttonSize: 40.0,
+                                                                                              fillColor: FlutterFlowTheme.of(context).accent1,
+                                                                                              icon: FaIcon(
+                                                                                                FontAwesomeIcons.heart,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                size: 24.0,
+                                                                                              ),
+                                                                                              onPressed: () async {},
                                                                                             ),
                                                                                           ),
-                                                                                        ),
-                                                                                    ],
+                                                                                        if (padRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
+                                                                                          Align(
+                                                                                            alignment: const AlignmentDirectional(0.89, 0.6),
+                                                                                            child: FlutterFlowIconButton(
+                                                                                              borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                              borderRadius: 20.0,
+                                                                                              borderWidth: 1.0,
+                                                                                              buttonSize: 40.0,
+                                                                                              fillColor: FlutterFlowTheme.of(context).accent1,
+                                                                                              icon: FaIcon(
+                                                                                                FontAwesomeIcons.solidHeart,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                size: 24.0,
+                                                                                              ),
+                                                                                              onPressed: () async {},
+                                                                                            ),
+                                                                                          ),
+                                                                                        if (padRevisedDbRecord.isNew == true)
+                                                                                          Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                            child: ClipRRect(
+                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              child: Image.asset(
+                                                                                                'assets/images/NewPurple001.gif',
+                                                                                                width: 50.0,
+                                                                                                height: 50.0,
+                                                                                                fit: BoxFit.cover,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                      ],
+                                                                                    ),
                                                                                   ),
                                                                                 ),
                                                                               ),
