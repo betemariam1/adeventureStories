@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>823754848308-a9matnk52r9vp0aa7gujl10cqga5hpic.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.823754848308-a9matnk52r9vp0aa7gujl10cqga5hpic</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>823754848308-lpgos53crh3c8bo223r176la2lnj7829.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAb9IGv8NiNII137xZJ0WxVXhXlIR8NrA8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>823754848308</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.AdventureStories.Story01</string>
+	<key>PROJECT_ID</key>
+	<string>learning-od677g</string>
+	<key>STORAGE_BUCKET</key>
+	<string>learning-od677g.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:823754848308:ios:e9a2e081b368b117d8f261</string>
+</dict>
+</plist>

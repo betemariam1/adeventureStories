@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "823754848308",
+    "project_id": "learning-od677g",
+    "storage_bucket": "learning-od677g.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823754848308:android:65386cbef2ad4560d8f261",
+        "android_client_info": {
+          "package_name": "com.AdventureStories.Story01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823754848308-tk83ve6qpr40kbpgge7hr4f4071cftfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.AdventureStories.Story01",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiA7gpYpo4brKa2mKi0gNMWH4-OO21LV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "823754848308-55ag423j34tlqlcu54tk44v7t13v3rqi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.learning"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823754848308:android:892433792b1b81e9d8f261",
+        "android_client_info": {
+          "package_name": "com.mycompany.adventurestories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823754848308-lpgos53crh3c8bo223r176la2lnj7829.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.adventurestories",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiA7gpYpo4brKa2mKi0gNMWH4-OO21LV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "823754848308-55ag423j34tlqlcu54tk44v7t13v3rqi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.learning"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823754848308:android:3052897b373329bcd8f261",
+        "android_client_info": {
+          "package_name": "com.mycompany.learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiA7gpYpo4brKa2mKi0gNMWH4-OO21LV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823754848308-scnadikv7piclnokblg4buaggfnnokme.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "823754848308-55ag423j34tlqlcu54tk44v7t13v3rqi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.learning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
