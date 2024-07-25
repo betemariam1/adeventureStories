@@ -874,73 +874,74 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                                                       children: [
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                          child: SizedBox(
-                                                                                            width: 293.0,
-                                                                                            height: 144.0,
-                                                                                            child: Stack(
-                                                                                              children: [
-                                                                                                Align(
-                                                                                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                                                                                  child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                                    child: Image.network(
-                                                                                                      cardRevisedDbRecord.cardImageSmall,
-                                                                                                      width: double.infinity,
-                                                                                                      height: 140.0,
-                                                                                                      fit: BoxFit.cover,
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ),
-                                                                                                if (cardRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
+                                                                                        Flexible(
+                                                                                          child: Align(
+                                                                                            alignment: const AlignmentDirectional(0.0, -1.0),
+                                                                                            child: SizedBox(
+                                                                                              height: 144.0,
+                                                                                              child: Stack(
+                                                                                                children: [
                                                                                                   Align(
-                                                                                                    alignment: const AlignmentDirectional(0.89, 0.6),
-                                                                                                    child: FlutterFlowIconButton(
-                                                                                                      borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                                      borderRadius: 20.0,
-                                                                                                      borderWidth: 1.0,
-                                                                                                      buttonSize: 40.0,
-                                                                                                      fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                                      icon: FaIcon(
-                                                                                                        FontAwesomeIcons.solidHeart,
-                                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                                        size: 24.0,
-                                                                                                      ),
-                                                                                                      onPressed: () async {
-                                                                                                        await currentUserReference!.update({
-                                                                                                          ...mapToFirestore(
-                                                                                                            {
-                                                                                                              'favorited': FieldValue.arrayRemove([favortiesInListItem]),
-                                                                                                            },
-                                                                                                          ),
-                                                                                                        });
-                                                                                                        // RemoveFromLibrary
-
-                                                                                                        await favortiesInListItem.update({
-                                                                                                          ...mapToFirestore(
-                                                                                                            {
-                                                                                                              'IsFavoritedByUser': FieldValue.arrayRemove([currentUserReference]),
-                                                                                                            },
-                                                                                                          ),
-                                                                                                        });
-                                                                                                      },
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                if (cardRevisedDbRecord.isNew == true)
-                                                                                                  Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                                     child: ClipRRect(
                                                                                                       borderRadius: BorderRadius.circular(8.0),
-                                                                                                      child: Image.asset(
-                                                                                                        'assets/images/NewPurple001.gif',
-                                                                                                        width: 50.0,
-                                                                                                        height: 50.0,
+                                                                                                      child: Image.network(
+                                                                                                        cardRevisedDbRecord.cardImageSmall,
+                                                                                                        width: double.infinity,
+                                                                                                        height: 140.0,
                                                                                                         fit: BoxFit.cover,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
-                                                                                              ],
+                                                                                                  if (cardRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
+                                                                                                    Align(
+                                                                                                      alignment: const AlignmentDirectional(0.89, 0.6),
+                                                                                                      child: FlutterFlowIconButton(
+                                                                                                        borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                                        borderRadius: 20.0,
+                                                                                                        borderWidth: 1.0,
+                                                                                                        buttonSize: 40.0,
+                                                                                                        fillColor: FlutterFlowTheme.of(context).accent1,
+                                                                                                        icon: FaIcon(
+                                                                                                          FontAwesomeIcons.solidHeart,
+                                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                                          size: 24.0,
+                                                                                                        ),
+                                                                                                        onPressed: () async {
+                                                                                                          await currentUserReference!.update({
+                                                                                                            ...mapToFirestore(
+                                                                                                              {
+                                                                                                                'favorited': FieldValue.arrayRemove([favortiesInListItem]),
+                                                                                                              },
+                                                                                                            ),
+                                                                                                          });
+                                                                                                          // RemoveFromLibrary
+
+                                                                                                          await favortiesInListItem.update({
+                                                                                                            ...mapToFirestore(
+                                                                                                              {
+                                                                                                                'IsFavoritedByUser': FieldValue.arrayRemove([currentUserReference]),
+                                                                                                              },
+                                                                                                            ),
+                                                                                                          });
+                                                                                                        },
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  if (cardRevisedDbRecord.isNew == true)
+                                                                                                    Padding(
+                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                                      child: ClipRRect(
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        child: Image.asset(
+                                                                                                          'assets/images/NewPurple001.gif',
+                                                                                                          width: 50.0,
+                                                                                                          height: 50.0,
+                                                                                                          fit: BoxFit.cover,
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                ],
+                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -966,7 +967,10 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                               Padding(
                                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                                 child: Text(
-                                                                                                  cardRevisedDbRecord.description.maybeHandleOverflow(maxChars: 60),
+                                                                                                  cardRevisedDbRecord.description.maybeHandleOverflow(
+                                                                                                    maxChars: 60,
+                                                                                                    replacement: '…',
+                                                                                                  ),
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'Poppins',
                                                                                                         letterSpacing: 0.0,
@@ -1788,7 +1792,10 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                     Padding(
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                       child: Text(
-                                                                                        padRevisedDbRecord.description.maybeHandleOverflow(maxChars: 60),
+                                                                                        padRevisedDbRecord.description.maybeHandleOverflow(
+                                                                                          maxChars: 60,
+                                                                                          replacement: '…',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Poppins',
                                                                                               letterSpacing: 0.0,
