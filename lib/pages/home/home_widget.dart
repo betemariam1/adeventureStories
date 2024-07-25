@@ -1666,7 +1666,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                         Padding(
                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                           child: Text(
-                                                                                            freeReadAlongNoSearchViewItem.description,
+                                                                                            freeReadAlongNoSearchViewItem.description.maybeHandleOverflow(
+                                                                                              maxChars: 25,
+                                                                                              replacement: '…',
+                                                                                            ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Poppins',
                                                                                                   letterSpacing: 0.0,
@@ -2034,7 +2037,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                         Padding(
                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                           child: Text(
-                                                                                            freeSearchViewItem.description,
+                                                                                            freeSearchViewItem.description.maybeHandleOverflow(
+                                                                                              maxChars: 25,
+                                                                                              replacement: '…',
+                                                                                            ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Poppins',
                                                                                                   letterSpacing: 0.0,

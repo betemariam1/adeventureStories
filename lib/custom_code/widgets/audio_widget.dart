@@ -20,6 +20,7 @@ class AudioWidget extends StatefulWidget {
     required this.url,
     required this.title,
     required this.playing,
+    required this.pauseOnNavigate,
   });
 
   final double? width;
@@ -27,13 +28,15 @@ class AudioWidget extends StatefulWidget {
   final String url;
   final String title;
   final bool playing;
+  final bool pauseOnNavigate;
 
   @override
   State<AudioWidget> createState() => _AudioWidgetState();
 }
 
-class _AudioWidgetState extends State<AudioWidget> {
+class _AudioWidgetState extends State<AudioWidget> with RouteAware {
   late AudioPlayer _audioPlayer;
+  bool _subscribedRoute = false;
   bool _isPlaying = false;
 
   @override
@@ -47,6 +50,22 @@ class _AudioWidgetState extends State<AudioWidget> {
   void dispose() {
     _audioPlayer.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (widget.pauseOnNavigate && ModalRoute.of(context) is PageRoute) {
+      _subscribedRoute = true;
+      routeObserver.subscribe(this, ModalRoute.of(context)!);
+    }
+  }
+
+  @override
+  void didPushNext() {
+    if (widget.pauseOnNavigate) {
+      _audioPlayer?.pause();
+    }
   }
 
   void _initializeAndPlayAudio() async {

@@ -184,6 +184,7 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                               .pages[widget.pageNumber!].narration,
                           title: storyChapterChaptersRecord.storyName,
                           playing: widget.playing,
+                          pauseOnNavigate: true,
                         ),
                       ),
                     ),
