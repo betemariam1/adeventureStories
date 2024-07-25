@@ -1667,7 +1667,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                           child: Text(
                                                                                             freeReadAlongNoSearchViewItem.description.maybeHandleOverflow(
-                                                                                              maxChars: 25,
+                                                                                              maxChars: 60,
                                                                                               replacement: '…',
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2038,7 +2038,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                           child: Text(
                                                                                             freeSearchViewItem.description.maybeHandleOverflow(
-                                                                                              maxChars: 25,
+                                                                                              maxChars: 60,
                                                                                               replacement: '…',
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3322,7 +3322,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                     child: Text(
-                                                                                      isReadAlongItem.description,
+                                                                                      isReadAlongItem.description.maybeHandleOverflow(maxChars: 60),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Poppins',
                                                                                             letterSpacing: 0.0,
@@ -3705,7 +3705,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     Padding(
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                       child: Text(
-                                                                                        searchItem.description,
+                                                                                        searchItem.description.maybeHandleOverflow(maxChars: 60),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Poppins',
                                                                                               letterSpacing: 0.0,
@@ -4990,7 +4990,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                     child: Text(
-                                                                                      searchAdventureItem.description,
+                                                                                      searchAdventureItem.description.maybeHandleOverflow(maxChars: 60),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Poppins',
                                                                                             letterSpacing: 0.0,
@@ -5372,7 +5372,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
                                                                                     child: Text(
-                                                                                      searchAdventureItem.description,
+                                                                                      searchAdventureItem.description.maybeHandleOverflow(maxChars: 60),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Poppins',
                                                                                             letterSpacing: 0.0,
