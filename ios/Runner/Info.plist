@@ -54,7 +54,10 @@
 	<true/>
 
 
-
+	<key>UIRequiresFullScreen</key>
+    <string>Yes</string>
+	<key>UISupportedInterfaceOrientationsipad</key>
+    <string>Please allow for changing orientations.</string>
 
 
 	<key>UILaunchStoryboardName</key>
