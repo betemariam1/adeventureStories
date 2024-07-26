@@ -515,8 +515,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   builder: (context) {
                                                     final freeReadAlongNoSearchView =
                                                         homeRevisedDbRecordList
-                                                            .where((e) =>
-                                                                e.isReadAlong)
+                                                            .where(
+                                                                (e) => e.isFree)
                                                             .toList();
 
                                                     return GridView.builder(
@@ -616,6 +616,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         0,
                                                                         ParamType
                                                                             .int,
+                                                                      ),
+                                                                      'isAdventureStory':
+                                                                          serializeParam(
+                                                                        freeReadAlongNoSearchViewItem
+                                                                            .isAdventure,
+                                                                        ParamType
+                                                                            .bool,
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );
@@ -950,8 +957,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   .text,
                                                               homeRevisedDbRecordList
                                                                   .toList())
-                                                          .where((e) =>
-                                                              e.isReadAlong)
+                                                          .where(
+                                                              (e) => e.isFree)
                                                           .toList();
 
                                                       return GridView.builder(
@@ -1032,6 +1039,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         0,
                                                                         ParamType
                                                                             .int,
+                                                                      ),
+                                                                      'isAdventureStory':
+                                                                          serializeParam(
+                                                                        freeSearchViewItem
+                                                                            .isAdventure,
+                                                                        ParamType
+                                                                            .bool,
                                                                       ),
                                                                     }.withoutNulls,
                                                                   );
@@ -1349,7 +1363,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       final freeReadAlongNoSearchView =
                                                           homeRevisedDbRecordList
                                                               .where((e) =>
-                                                                  e.isReadAlong)
+                                                                  e.isFree)
                                                               .toList();
 
                                                       return GridView.builder(
@@ -1423,6 +1437,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       0,
                                                                       ParamType
                                                                           .int,
+                                                                    ),
+                                                                    'isAdventureStory':
+                                                                        serializeParam(
+                                                                      freeReadAlongNoSearchViewItem
+                                                                          .isAdventure,
+                                                                      ParamType
+                                                                          .bool,
                                                                     ),
                                                                   }.withoutNulls,
                                                                 );
@@ -1795,6 +1816,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       ParamType
                                                                           .int,
                                                                     ),
+                                                                    'isAdventureStory':
+                                                                        serializeParam(
+                                                                      freeSearchViewItem
+                                                                          .isAdventure,
+                                                                      ParamType
+                                                                          .bool,
+                                                                    ),
                                                                   }.withoutNulls,
                                                                 );
                                                               },
@@ -2109,8 +2137,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               builder: (context) {
                                                 final isReadAlong =
                                                     homeRevisedDbRecordList
-                                                        .where((e) =>
-                                                            e.isReadAlong)
+                                                        .where((e) => e.isFree)
                                                         .toList();
 
                                                 return GridView.builder(
@@ -2183,6 +2210,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     serializeParam(
                                                                   0,
                                                                   ParamType.int,
+                                                                ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  isReadAlongItem
+                                                                      .isAdventure,
+                                                                  ParamType
+                                                                      .bool,
                                                                 ),
                                                               }.withoutNulls,
                                                             );
@@ -2613,6 +2647,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   serializeParam(
                                                                 0,
                                                                 ParamType.int,
+                                                              ),
+                                                              'isAdventureStory':
+                                                                  serializeParam(
+                                                                searchItem
+                                                                    .isAdventure,
+                                                                ParamType.bool,
                                                               ),
                                                             }.withoutNulls,
                                                           );
@@ -3071,6 +3111,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     ParamType
                                                                         .int,
                                                                   ),
+                                                                  'isAdventureStory':
+                                                                      serializeParam(
+                                                                    isReadAlongItem
+                                                                        .isAdventure,
+                                                                    ParamType
+                                                                        .bool,
+                                                                  ),
                                                                 }.withoutNulls,
                                                               );
                                                             },
@@ -3448,6 +3495,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     serializeParam(
                                                                   0,
                                                                   ParamType.int,
+                                                                ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  searchItem
+                                                                      .isAdventure,
+                                                                  ParamType
+                                                                      .bool,
                                                                 ),
                                                               }.withoutNulls,
                                                             );
@@ -3847,6 +3901,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   0,
                                                                   ParamType.int,
                                                                 ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  isAdventureItem
+                                                                      .isAdventure,
+                                                                  ParamType
+                                                                      .bool,
+                                                                ),
                                                               }.withoutNulls,
                                                             );
                                                           },
@@ -3898,6 +3959,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     'pageNumber': serializeParam(
                                                                                       0,
                                                                                       ParamType.int,
+                                                                                    ),
+                                                                                    'isAdventureStory': serializeParam(
+                                                                                      isAdventureItem.isAdventure,
+                                                                                      ParamType.bool,
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                 );
@@ -4272,6 +4337,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   0,
                                                                   ParamType.int,
                                                                 ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  searchAdventureItem
+                                                                      .isAdventure,
+                                                                  ParamType
+                                                                      .bool,
+                                                                ),
                                                               }.withoutNulls,
                                                             );
                                                           },
@@ -4383,6 +4455,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 'pageNumber': serializeParam(
                                                                                   0,
                                                                                   ParamType.int,
+                                                                                ),
+                                                                                'isAdventureStory': serializeParam(
+                                                                                  searchAdventureItem.isFavorite,
+                                                                                  ParamType.bool,
                                                                                 ),
                                                                               }.withoutNulls,
                                                                             );
@@ -4738,6 +4814,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     serializeParam(
                                                                   0,
                                                                   ParamType.int,
+                                                                ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  searchAdventureItem
+                                                                      .isAdventure,
+                                                                  ParamType
+                                                                      .bool,
                                                                 ),
                                                               }.withoutNulls,
                                                             );
@@ -5113,6 +5196,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   serializeParam(
                                                                 0,
                                                                 ParamType.int,
+                                                              ),
+                                                              'isAdventureStory':
+                                                                  serializeParam(
+                                                                searchAdventureItem
+                                                                    .isAdventure,
+                                                                ParamType.bool,
                                                               ),
                                                             }.withoutNulls,
                                                           );

@@ -345,6 +345,13 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                         ParamType
                                                                             .int,
                                                                       ),
+                                                                      'isAdventureStory':
+                                                                          serializeParam(
+                                                                        cardRevisedDbRecord
+                                                                            .isAdventure,
+                                                                        ParamType
+                                                                            .bool,
+                                                                      ),
                                                                     }.withoutNulls,
                                                                   );
                                                                 },
@@ -715,6 +722,11 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                               serializeParam(
                                                                             0,
                                                                             ParamType.int,
+                                                                          ),
+                                                                          'isAdventureStory':
+                                                                              serializeParam(
+                                                                            cardRevisedDbRecord.isFavorite,
+                                                                            ParamType.bool,
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
@@ -1123,6 +1135,13 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                     serializeParam(
                                                                   0,
                                                                   ParamType.int,
+                                                                ),
+                                                                'isAdventureStory':
+                                                                    serializeParam(
+                                                                  mobileRevisedDbRecord
+                                                                      .isFavorite,
+                                                                  ParamType
+                                                                      .bool,
                                                                 ),
                                                               }.withoutNulls,
                                                             );
@@ -1546,6 +1565,13 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                     'playing':
                                                                         serializeParam(
                                                                       true,
+                                                                      ParamType
+                                                                          .bool,
+                                                                    ),
+                                                                    'isAdventureStory':
+                                                                        serializeParam(
+                                                                      containerRevisedDbRecord
+                                                                          .isAdventure,
                                                                       ParamType
                                                                           .bool,
                                                                     ),

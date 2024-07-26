@@ -13,15 +13,16 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 class AudioWidget extends StatefulWidget {
-  const AudioWidget({
-    super.key,
-    this.width,
-    this.height,
-    required this.url,
-    required this.title,
-    required this.playing,
-    required this.pauseOnNavigate,
-  });
+  const AudioWidget(
+      {super.key,
+      this.width,
+      this.height,
+      required this.url,
+      required this.title,
+      required this.playing,
+      required this.pauseOnNavigate,
+      required this.isAdventureStories,
+      required this.onCallAction});
 
   final double? width;
   final double? height;
@@ -29,6 +30,8 @@ class AudioWidget extends StatefulWidget {
   final String title;
   final bool playing;
   final bool pauseOnNavigate;
+  final bool isAdventureStories;
+  final Future Function() onCallAction;
 
   @override
   State<AudioWidget> createState() => _AudioWidgetState();
@@ -82,10 +85,13 @@ class _AudioWidgetState extends State<AudioWidget> with RouteAware {
         });
         // Stop the player to reset its state to idle
         _audioPlayer.stop();
+        if (widget.isAdventureStories == false) {
+          widget.onCallAction();
+        }
       }
     });
     // Play audio if the playing field is true
-    if (widget.playing) {
+    if (FFAppState().isPlaying) {
       await _audioPlayer.play();
     }
   }
@@ -148,7 +154,7 @@ class _AudioWidgetState extends State<AudioWidget> with RouteAware {
                       _isPlaying
                           ? Icons.pause_circle_filled_rounded
                           : Icons.play_circle_fill_rounded,
-                      color: Colors.blueAccent,
+                      color: FlutterFlowTheme.of(context).primary,
                       size: 34,
                     ),
                     iconSize: 34,

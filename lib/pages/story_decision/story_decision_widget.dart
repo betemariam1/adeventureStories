@@ -1,8 +1,8 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'story_decision_model.dart';
@@ -13,10 +13,12 @@ class StoryDecisionWidget extends StatefulWidget {
     super.key,
     required this.chapter,
     this.page,
+    required this.isAdventureStory,
   });
 
   final DocumentReference? chapter;
   final int? page;
+  final bool? isAdventureStory;
 
   @override
   State<StoryDecisionWidget> createState() => _StoryDecisionWidgetState();
@@ -72,132 +74,156 @@ class _StoryDecisionWidgetState extends State<StoryDecisionWidget> {
               top: true,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 30.0,
-                              buttonSize: 50.0,
-                              fillColor: FlutterFlowTheme.of(context).alternate,
-                              hoverColor: FlutterFlowTheme.of(context).primary,
-                              hoverIconColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              icon: FaIcon(
-                                FontAwesomeIcons.arrowLeft,
-                                color: FlutterFlowTheme.of(context).primary,
-                              ),
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'Home',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.leftToRight,
-                                    ),
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                    child: FlutterFlowAudioPlayer(
-                      audio: Audio.network(
-                        valueOrDefault<String>(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 30.0,
+                                buttonSize: 50.0,
+                                fillColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                hoverColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                hoverIconColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                icon: FaIcon(
+                                  FontAwesomeIcons.arrowLeft,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'Home',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.leftToRight,
+                                      ),
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.sizeOf(context).width * 0.95,
+                    decoration: const BoxDecoration(),
+                    child: SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.95,
+                      height: 70.0,
+                      child: custom_widgets.AudioWidget(
+                        width: MediaQuery.sizeOf(context).width * 0.95,
+                        height: 70.0,
+                        url: valueOrDefault<String>(
                           storyDecisionChaptersRecord.decisionPage.narration,
                           '1',
                         ),
-                        metas: Metas(
-                          id: 'sample3.mp3-13371a8b',
-                          title: storyDecisionChaptersRecord.storyName,
-                        ),
+                        title: storyDecisionChaptersRecord.storyName,
+                        playing: true,
+                        pauseOnNavigate: true,
+                        isAdventureStories: true,
+                        onCallAction: () async {},
                       ),
-                      titleTextStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
-                      playbackDurationTextStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
-                      fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                      playbackButtonColor: FlutterFlowTheme.of(context).primary,
-                      activeTrackColor: FlutterFlowTheme.of(context).secondary,
-                      inactiveTrackColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      elevation: 1.0,
-                      playInBackground:
-                          PlayInBackground.disabledRestoreOnForeground,
                     ),
                   ),
-                  Stack(
-                    children: [
-                      Stack(
-                        children: [
-                          if (responsiveVisibility(
-                            context: context,
-                            phone: false,
-                          ))
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  storyDecisionChaptersRecord
-                                      .decisionPage.image,
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Stack(
+                      children: [
+                        if (responsiveVisibility(
+                          context: context,
+                          phone: false,
+                        ))
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                storyDecisionChaptersRecord.decisionPage.image,
+                                width: double.infinity,
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.722,
+                                fit: BoxFit.fill,
+                                alignment: const Alignment(0.0, 0.0),
+                              ),
+                            ),
+                          ),
+                        if (responsiveVisibility(
+                          context: context,
+                          tablet: false,
+                          tabletLandscape: false,
+                          desktop: false,
+                        ))
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                storyDecisionChaptersRecord.decisionPage.image,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.642,
+                                fit: BoxFit.fill,
+                                alignment: const Alignment(0.0, 0.0),
+                              ),
+                            ),
+                          ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'StoryChapter',
+                                    queryParameters: {
+                                      'chapter': serializeParam(
+                                        storyDecisionChaptersRecord
+                                            .optionAChapter,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'pageNumber': serializeParam(
+                                        0,
+                                        ParamType.int,
+                                      ),
+                                      'isAdventureStory': serializeParam(
+                                        false,
+                                        ParamType.bool,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: Container(
                                   width: double.infinity,
                                   height:
-                                      MediaQuery.sizeOf(context).height * 0.722,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
+                                      MediaQuery.sizeOf(context).height * 0.34,
+                                  decoration: const BoxDecoration(),
                                 ),
                               ),
-                            ),
-                          if (responsiveVisibility(
-                            context: context,
-                            tablet: false,
-                            tabletLandscape: false,
-                            desktop: false,
-                          ))
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  storyDecisionChaptersRecord
-                                      .decisionPage.image,
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.642,
-                                  fit: BoxFit.fill,
-                                  alignment: const Alignment(0.0, 0.0),
-                                ),
-                              ),
-                            ),
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                InkWell(
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
                                   hoverColor: Colors.transparent,
@@ -208,12 +234,20 @@ class _StoryDecisionWidgetState extends State<StoryDecisionWidget> {
                                       queryParameters: {
                                         'chapter': serializeParam(
                                           storyDecisionChaptersRecord
-                                              .optionAChapter,
+                                              .optionBChapter,
                                           ParamType.DocumentReference,
                                         ),
                                         'pageNumber': serializeParam(
                                           0,
                                           ParamType.int,
+                                        ),
+                                        'playing': serializeParam(
+                                          false,
+                                          ParamType.bool,
+                                        ),
+                                        'isAdventureStory': serializeParam(
+                                          widget.isAdventureStory,
+                                          ParamType.bool,
                                         ),
                                       }.withoutNulls,
                                     );
@@ -221,48 +255,16 @@ class _StoryDecisionWidgetState extends State<StoryDecisionWidget> {
                                   child: Container(
                                     width: double.infinity,
                                     height: MediaQuery.sizeOf(context).height *
-                                        0.34,
+                                        0.326,
                                     decoration: const BoxDecoration(),
                                   ),
                                 ),
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'StoryChapter',
-                                        queryParameters: {
-                                          'chapter': serializeParam(
-                                            storyDecisionChaptersRecord
-                                                .optionBChapter,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'pageNumber': serializeParam(
-                                            0,
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    child: Container(
-                                      width: double.infinity,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              0.326,
-                                      decoration: const BoxDecoration(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,

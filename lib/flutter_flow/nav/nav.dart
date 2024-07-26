@@ -186,6 +186,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'playing',
               ParamType.bool,
             ),
+            isAdventureStory: params.getParam(
+              'isAdventureStory',
+              ParamType.bool,
+            ),
           ),
         ),
         FFRoute(
@@ -201,6 +205,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             page: params.getParam(
               'page',
               ParamType.int,
+            ),
+            isAdventureStory: params.getParam(
+              'isAdventureStory',
+              ParamType.bool,
             ),
           ),
         ),

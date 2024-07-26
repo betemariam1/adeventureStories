@@ -224,6 +224,10 @@ class _StoryEndWidgetState extends State<StoryEndWidget> {
                                     0,
                                     ParamType.int,
                                   ),
+                                  'isAdventureStory': serializeParam(
+                                    storyEndRevisedDbRecord.isAdventure,
+                                    ParamType.bool,
+                                  ),
                                 }.withoutNulls,
                               );
                             },

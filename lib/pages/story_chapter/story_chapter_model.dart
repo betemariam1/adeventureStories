@@ -9,6 +9,10 @@ class StoryChapterModel extends FlutterFlowModel<StoryChapterWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for Switch widget.
   bool? switchValue;
+  // Stores action output result for [Firestore Query - Query a collection] action in AudioWidget widget.
+  RevisedDbRecord? revisedDb2;
+  // Stores action output result for [Firestore Query - Query a collection] action in AudioWidget widget.
+  StartedStoriesRecord? stories2;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   RevisedDbRecord? revisedDb;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.

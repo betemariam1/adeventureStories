@@ -19,11 +19,13 @@ class StoryChapterWidget extends StatefulWidget {
     required this.chapter,
     required this.pageNumber,
     bool? playing,
+    required this.isAdventureStory,
   }) : playing = playing ?? true;
 
   final DocumentReference? chapter;
   final int? pageNumber;
   final bool playing;
+  final bool? isAdventureStory;
 
   @override
   State<StoryChapterWidget> createState() => _StoryChapterWidgetState();
@@ -122,51 +124,61 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text(
-                                'Autoplay',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                              StreamBuilder<List<RevisedDbRecord>>(
-                                stream: queryRevisedDbRecord(),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: LinearProgressIndicator(
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: Text(
+                                  'Autoplay Story',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
-                                    );
-                                  }
-                                  List<RevisedDbRecord>
-                                      switchRevisedDbRecordList =
-                                      snapshot.data!;
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: StreamBuilder<List<RevisedDbRecord>>(
+                                  stream: queryRevisedDbRecord(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: LinearProgressIndicator(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                        ),
+                                      );
+                                    }
+                                    List<RevisedDbRecord>
+                                        switchRevisedDbRecordList =
+                                        snapshot.data!;
 
-                                  return Switch.adaptive(
-                                    value: _model.switchValue!,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.switchValue = newValue);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    activeTrackColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    inactiveTrackColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    inactiveThumbColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                  );
-                                },
+                                    return Switch.adaptive(
+                                      value: _model.switchValue!,
+                                      onChanged: (newValue) async {
+                                        setState(() =>
+                                            _model.switchValue = newValue);
+                                      },
+                                      activeColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      activeTrackColor:
+                                          FlutterFlowTheme.of(context)
+                                              .alternate,
+                                      inactiveTrackColor:
+                                          FlutterFlowTheme.of(context)
+                                              .alternate,
+                                      inactiveThumbColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                    );
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -187,6 +199,147 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                           title: storyChapterChaptersRecord.storyName,
                           playing: widget.playing,
                           pauseOnNavigate: true,
+                          isAdventureStories: widget.isAdventureStory!,
+                          onCallAction: () async {
+                            if (storyChapterChaptersRecord.pages.length !=
+                                ((widget.pageNumber!) + 1)) {
+                              _model.revisedDb2 =
+                                  await queryRevisedDbRecordOnce(
+                                queryBuilder: (revisedDbRecord) =>
+                                    revisedDbRecord.where(
+                                  'chapterRef',
+                                  isEqualTo: widget.chapter,
+                                ),
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
+                              _model.stories2 =
+                                  await queryStartedStoriesRecordOnce(
+                                parent: currentUserReference,
+                                queryBuilder: (startedStoriesRecord) =>
+                                    startedStoriesRecord.where(
+                                  'revisedDbRef',
+                                  isEqualTo: _model.revisedDb2?.reference,
+                                ),
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
+                              if (_model.stories2?.reference != null) {
+                                await _model.stories2!.reference
+                                    .update(createStartedStoriesRecordData(
+                                  chapterNumber: (widget.pageNumber!) + 1,
+                                  createdDate: getCurrentTimestamp,
+                                ));
+
+                                context.pushNamed(
+                                  'StoryChapter',
+                                  queryParameters: {
+                                    'chapter': serializeParam(
+                                      widget.chapter,
+                                      ParamType.DocumentReference,
+                                    ),
+                                    'pageNumber': serializeParam(
+                                      (widget.pageNumber!) + 1,
+                                      ParamType.int,
+                                    ),
+                                    'playing': serializeParam(
+                                      FFAppState().isPlaying,
+                                      ParamType.bool,
+                                    ),
+                                    'isAdventureStory': serializeParam(
+                                      widget.isAdventureStory,
+                                      ParamType.bool,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                    ),
+                                  },
+                                );
+                              } else {
+                                await StartedStoriesRecord.createDoc(
+                                        currentUserReference!)
+                                    .set(createStartedStoriesRecordData(
+                                  chapterReference: widget.chapter,
+                                  chapterNumber: (widget.pageNumber!) + 1,
+                                  createdDate: getCurrentTimestamp,
+                                  revisedDbRef: _model.revisedDb2?.reference,
+                                ));
+
+                                context.pushNamed(
+                                  'StoryChapter',
+                                  queryParameters: {
+                                    'chapter': serializeParam(
+                                      widget.chapter,
+                                      ParamType.DocumentReference,
+                                    ),
+                                    'pageNumber': serializeParam(
+                                      (widget.pageNumber!) + 1,
+                                      ParamType.int,
+                                    ),
+                                    'playing': serializeParam(
+                                      FFAppState().isPlaying,
+                                      ParamType.bool,
+                                    ),
+                                    'isAdventureStory': serializeParam(
+                                      widget.isAdventureStory,
+                                      ParamType.bool,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                    ),
+                                  },
+                                );
+                              }
+                            } else {
+                              if (!storyChapterChaptersRecord.isLastChapter) {
+                                context.pushNamed(
+                                  'StoryDecision',
+                                  queryParameters: {
+                                    'chapter': serializeParam(
+                                      widget.chapter,
+                                      ParamType.DocumentReference,
+                                    ),
+                                    'isAdventureStory': serializeParam(
+                                      widget.isAdventureStory,
+                                      ParamType.bool,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                    ),
+                                  },
+                                );
+                              } else {
+                                context.pushNamed(
+                                  'StoryEnd',
+                                  queryParameters: {
+                                    'currentStory': serializeParam(
+                                      storyChapterChaptersRecord.storyId,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: const TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                    ),
+                                  },
+                                );
+                              }
+                            }
+
+                            setState(() {});
+                          },
                         ),
                       ),
                     ),
@@ -240,6 +393,10 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                           ),
                                           'playing': serializeParam(
                                             FFAppState().isPlaying,
+                                            ParamType.bool,
+                                          ),
+                                          'isAdventureStory': serializeParam(
+                                            widget.isAdventureStory,
                                             ParamType.bool,
                                           ),
                                         }.withoutNulls,
@@ -326,6 +483,10 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                           FFAppState().isPlaying,
                                           ParamType.bool,
                                         ),
+                                        'isAdventureStory': serializeParam(
+                                          widget.isAdventureStory,
+                                          ParamType.bool,
+                                        ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
@@ -360,6 +521,10 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                           FFAppState().isPlaying,
                                           ParamType.bool,
                                         ),
+                                        'isAdventureStory': serializeParam(
+                                          widget.isAdventureStory,
+                                          ParamType.bool,
+                                        ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
@@ -379,6 +544,10 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                         'chapter': serializeParam(
                                           widget.chapter,
                                           ParamType.DocumentReference,
+                                        ),
+                                        'isAdventureStory': serializeParam(
+                                          widget.isAdventureStory,
+                                          ParamType.bool,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
