@@ -41,7 +41,7 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
     super.initState();
     _model = createModel(context, () => StoryChapterModel());
 
-    _model.switchValue = true;
+    _model.autoPlayValue = false;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -121,67 +121,47 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                               },
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: Text(
-                                  'Autoplay Story',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                child: StreamBuilder<List<RevisedDbRecord>>(
-                                  stream: queryRevisedDbRecord(),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: LinearProgressIndicator(
+                          if (!widget.isAdventureStory!)
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Text(
+                                    'Autoplay Story',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
                                         ),
-                                      );
-                                    }
-                                    List<RevisedDbRecord>
-                                        switchRevisedDbRecordList =
-                                        snapshot.data!;
-
-                                    return Switch.adaptive(
-                                      value: _model.switchValue!,
-                                      onChanged: (newValue) async {
-                                        setState(() =>
-                                            _model.switchValue = newValue);
-                                      },
-                                      activeColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      activeTrackColor:
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      inactiveTrackColor:
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      inactiveThumbColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                    );
-                                  },
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  child: Switch.adaptive(
+                                    value: _model.autoPlayValue!,
+                                    onChanged: (newValue) async {
+                                      setState(() =>
+                                          _model.autoPlayValue = newValue);
+                                    },
+                                    activeColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    activeTrackColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    inactiveTrackColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    inactiveThumbColor:
+                                        FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
                         ],
                       ),
                     ),
@@ -200,6 +180,7 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                           playing: widget.playing,
                           pauseOnNavigate: true,
                           isAdventureStories: widget.isAdventureStory!,
+                          autoPlay: _model.autoPlayValue!,
                           onCallAction: () async {
                             if (storyChapterChaptersRecord.pages.length !=
                                 ((widget.pageNumber!) + 1)) {

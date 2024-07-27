@@ -137,6 +137,7 @@ class _StoryDecisionWidgetState extends State<StoryDecisionWidget> {
                         playing: true,
                         pauseOnNavigate: true,
                         isAdventureStories: true,
+                        autoPlay: false,
                         onCallAction: () async {},
                       ),
                     ),

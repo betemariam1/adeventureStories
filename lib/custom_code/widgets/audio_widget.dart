@@ -22,6 +22,7 @@ class AudioWidget extends StatefulWidget {
       required this.playing,
       required this.pauseOnNavigate,
       required this.isAdventureStories,
+      required this.autoPlay,
       required this.onCallAction});
 
   final double? width;
@@ -30,6 +31,7 @@ class AudioWidget extends StatefulWidget {
   final String title;
   final bool playing;
   final bool pauseOnNavigate;
+  final bool autoPlay;
   final bool isAdventureStories;
   final Future Function() onCallAction;
 
@@ -85,7 +87,7 @@ class _AudioWidgetState extends State<AudioWidget> with RouteAware {
         });
         // Stop the player to reset its state to idle
         _audioPlayer.stop();
-        if (widget.isAdventureStories == false) {
+        if (widget.isAdventureStories == false && widget.autoPlay == true) {
           widget.onCallAction();
         }
       }

@@ -385,41 +385,21 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Flexible(
-                                                                                    child: InkWell(
-                                                                                      splashColor: Colors.transparent,
-                                                                                      focusColor: Colors.transparent,
-                                                                                      hoverColor: Colors.transparent,
-                                                                                      highlightColor: Colors.transparent,
-                                                                                      onTap: () async {
-                                                                                        context.pushNamed(
-                                                                                          'StoryIntro',
-                                                                                          queryParameters: {
-                                                                                            'passStoryInto1': serializeParam(
-                                                                                              cardRevisedDbRecord,
-                                                                                              ParamType.Document,
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      height: 29.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).inversePrimary,
+                                                                                      ),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        'Choose Your Own Adventure Story',
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w500,
                                                                                             ),
-                                                                                          }.withoutNulls,
-                                                                                          extra: <String, dynamic>{
-                                                                                            'passStoryInto1': cardRevisedDbRecord,
-                                                                                          },
-                                                                                        );
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: double.infinity,
-                                                                                        height: 29.0,
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: FlutterFlowTheme.of(context).inversePrimary,
-                                                                                        ),
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Choose Your Own Adventure Story',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Poppins',
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                              ),
-                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -430,40 +410,20 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Flexible(
-                                                                                    child: InkWell(
-                                                                                      splashColor: Colors.transparent,
-                                                                                      focusColor: Colors.transparent,
-                                                                                      hoverColor: Colors.transparent,
-                                                                                      highlightColor: Colors.transparent,
-                                                                                      onTap: () async {
-                                                                                        context.pushNamed(
-                                                                                          'StoryIntro',
-                                                                                          queryParameters: {
-                                                                                            'passStoryInto1': serializeParam(
-                                                                                              cardRevisedDbRecord,
-                                                                                              ParamType.Document,
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      height: 29.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                      ),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        'Read Along Story',
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                              letterSpacing: 0.0,
                                                                                             ),
-                                                                                          }.withoutNulls,
-                                                                                          extra: <String, dynamic>{
-                                                                                            'passStoryInto1': cardRevisedDbRecord,
-                                                                                          },
-                                                                                        );
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: double.infinity,
-                                                                                        height: 29.0,
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                        ),
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Read Along Story',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Poppins',
-                                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -517,7 +477,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                         child: Stack(
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                               child: ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -530,7 +490,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                             ),
                                                                                             if (cardRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
                                                                                               Align(
-                                                                                                alignment: const AlignmentDirectional(0.94, 0.74),
+                                                                                                alignment: const AlignmentDirectional(0.96, 0.84),
                                                                                                 child: FlutterFlowIconButton(
                                                                                                   borderColor: FlutterFlowTheme.of(context).primary,
                                                                                                   borderRadius: 20.0,
@@ -546,15 +506,18 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                                 ),
                                                                                               ),
                                                                                             if (cardRevisedDbRecord.isNew == true)
-                                                                                              Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                                child: ClipRRect(
-                                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                                  child: Image.asset(
-                                                                                                    'assets/images/NewPurple001.gif',
-                                                                                                    width: 50.0,
-                                                                                                    height: 50.0,
-                                                                                                    fit: BoxFit.cover,
+                                                                                              Align(
+                                                                                                alignment: const AlignmentDirectional(-1.03, -1.14),
+                                                                                                child: Padding(
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/NewPurple001.gif',
+                                                                                                      width: 50.0,
+                                                                                                      height: 50.0,
+                                                                                                      fit: BoxFit.cover,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -762,41 +725,21 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Flexible(
-                                                                                          child: InkWell(
-                                                                                            splashColor: Colors.transparent,
-                                                                                            focusColor: Colors.transparent,
-                                                                                            hoverColor: Colors.transparent,
-                                                                                            highlightColor: Colors.transparent,
-                                                                                            onTap: () async {
-                                                                                              context.pushNamed(
-                                                                                                'StoryIntro',
-                                                                                                queryParameters: {
-                                                                                                  'passStoryInto1': serializeParam(
-                                                                                                    cardRevisedDbRecord,
-                                                                                                    ParamType.Document,
+                                                                                          child: Container(
+                                                                                            width: 361.0,
+                                                                                            height: 29.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                                            ),
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                            child: Text(
+                                                                                              'Choose Your Own Adventure Story',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Poppins',
+                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w500,
                                                                                                   ),
-                                                                                                }.withoutNulls,
-                                                                                                extra: <String, dynamic>{
-                                                                                                  'passStoryInto1': cardRevisedDbRecord,
-                                                                                                },
-                                                                                              );
-                                                                                            },
-                                                                                            child: Container(
-                                                                                              width: 361.0,
-                                                                                              height: 29.0,
-                                                                                              decoration: BoxDecoration(
-                                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                                              ),
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                              child: Text(
-                                                                                                'Choose Your Own Adventure Story',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Poppins',
-                                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w500,
-                                                                                                    ),
-                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -807,40 +750,20 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Flexible(
-                                                                                          child: InkWell(
-                                                                                            splashColor: Colors.transparent,
-                                                                                            focusColor: Colors.transparent,
-                                                                                            hoverColor: Colors.transparent,
-                                                                                            highlightColor: Colors.transparent,
-                                                                                            onTap: () async {
-                                                                                              context.pushNamed(
-                                                                                                'StoryIntro',
-                                                                                                queryParameters: {
-                                                                                                  'passStoryInto1': serializeParam(
-                                                                                                    cardRevisedDbRecord,
-                                                                                                    ParamType.Document,
+                                                                                          child: Container(
+                                                                                            width: 361.0,
+                                                                                            height: 29.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                            ),
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                            child: Text(
+                                                                                              'Read Along Story',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Poppins',
+                                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                    letterSpacing: 0.0,
                                                                                                   ),
-                                                                                                }.withoutNulls,
-                                                                                                extra: <String, dynamic>{
-                                                                                                  'passStoryInto1': cardRevisedDbRecord,
-                                                                                                },
-                                                                                              );
-                                                                                            },
-                                                                                            child: Container(
-                                                                                              width: 361.0,
-                                                                                              height: 29.0,
-                                                                                              decoration: BoxDecoration(
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                              ),
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                              child: Text(
-                                                                                                'Read Along Story',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Poppins',
-                                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
-                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -907,7 +830,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                                   ),
                                                                                                   if (cardRevisedDbRecord.isFavoritedByUser.contains(currentUserReference) == true)
                                                                                                     Align(
-                                                                                                      alignment: const AlignmentDirectional(0.89, 0.6),
+                                                                                                      alignment: const AlignmentDirectional(0.95, 0.8),
                                                                                                       child: FlutterFlowIconButton(
                                                                                                         borderColor: FlutterFlowTheme.of(context).primary,
                                                                                                         borderRadius: 20.0,
@@ -940,15 +863,18 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                   if (cardRevisedDbRecord.isNew == true)
-                                                                                                    Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                                                                                                      child: ClipRRect(
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                                        child: Image.asset(
-                                                                                                          'assets/images/NewPurple001.gif',
-                                                                                                          width: 50.0,
-                                                                                                          height: 50.0,
-                                                                                                          fit: BoxFit.cover,
+                                                                                                    Align(
+                                                                                                      alignment: const AlignmentDirectional(-1.06, -1.17),
+                                                                                                      child: Padding(
+                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                                                                                                        child: ClipRRect(
+                                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                                          child: Image.asset(
+                                                                                                            'assets/images/NewPurple001.gif',
+                                                                                                            width: 50.0,
+                                                                                                            height: 50.0,
+                                                                                                            fit: BoxFit.cover,
+                                                                                                          ),
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -960,39 +886,41 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                       ],
                                                                                     ),
                                                                                   ),
-                                                                                  Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      children: [
-                                                                                        Flexible(
-                                                                                          child: Wrap(
-                                                                                            spacing: 0.0,
-                                                                                            runSpacing: 0.0,
-                                                                                            alignment: WrapAlignment.start,
-                                                                                            crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                            direction: Axis.horizontal,
-                                                                                            runAlignment: WrapAlignment.start,
-                                                                                            verticalDirection: VerticalDirection.down,
-                                                                                            clipBehavior: Clip.none,
-                                                                                            children: [
-                                                                                              Padding(
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                                child: Text(
-                                                                                                  cardRevisedDbRecord.description.maybeHandleOverflow(
-                                                                                                    maxChars: 60,
-                                                                                                    replacement: '…',
+                                                                                  Flexible(
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Flexible(
+                                                                                            child: Wrap(
+                                                                                              spacing: 0.0,
+                                                                                              runSpacing: 0.0,
+                                                                                              alignment: WrapAlignment.start,
+                                                                                              crossAxisAlignment: WrapCrossAlignment.start,
+                                                                                              direction: Axis.horizontal,
+                                                                                              runAlignment: WrapAlignment.start,
+                                                                                              verticalDirection: VerticalDirection.down,
+                                                                                              clipBehavior: Clip.none,
+                                                                                              children: [
+                                                                                                Padding(
+                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                                                                                                  child: Text(
+                                                                                                    cardRevisedDbRecord.description.maybeHandleOverflow(
+                                                                                                      maxChars: 60,
+                                                                                                      replacement: '…',
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Poppins',
+                                                                                                          letterSpacing: 0.0,
+                                                                                                        ),
                                                                                                   ),
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Poppins',
-                                                                                                        letterSpacing: 0.0,
-                                                                                                      ),
                                                                                                 ),
-                                                                                              ),
-                                                                                            ],
+                                                                                              ],
+                                                                                            ),
                                                                                           ),
-                                                                                        ),
-                                                                                      ],
+                                                                                        ],
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ],
@@ -1175,40 +1103,20 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                         children: [
                                                                           Flexible(
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'StoryIntro',
-                                                                                  queryParameters: {
-                                                                                    'passStoryInto1': serializeParam(
-                                                                                      mobileRevisedDbRecord,
-                                                                                      ParamType.Document,
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 29.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                              ),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Read Along Story',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                      letterSpacing: 0.0,
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    'passStoryInto1': mobileRevisedDbRecord,
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 29.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Read Along Story',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1222,41 +1130,21 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                         children: [
                                                                           Flexible(
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'StoryIntro',
-                                                                                  queryParameters: {
-                                                                                    'passStoryInto1': serializeParam(
-                                                                                      mobileRevisedDbRecord,
-                                                                                      ParamType.Document,
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 29.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).alternate,
+                                                                              ),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Choose Your Own Adventure Story',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w500,
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    'passStoryInto1': mobileRevisedDbRecord,
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 29.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).alternate,
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Choose Your Own Adventure Story',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w500,
-                                                                                      ),
-                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1330,7 +1218,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                           crossAxisAlignment:
                                                                               CrossAxisAlignment.start,
                                                                           children: [
-                                                                            Flexible(
+                                                                            Expanded(
                                                                               child: Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                 child: ClipRRect(
@@ -1338,7 +1226,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                   child: Image.network(
                                                                                     mobileRevisedDbRecord.cardImageSmall,
                                                                                     width: double.infinity,
-                                                                                    height: 178.0,
+                                                                                    height: 158.0,
                                                                                     fit: BoxFit.cover,
                                                                                   ),
                                                                                 ),
@@ -1353,8 +1241,8 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                 Align(
                                                                   alignment:
                                                                       const AlignmentDirectional(
-                                                                          0.91,
-                                                                          0.77),
+                                                                          0.88,
+                                                                          0.86),
                                                                   child:
                                                                       FlutterFlowIconButton(
                                                                     borderColor:
@@ -1393,7 +1281,7 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                     alignment:
                                                                         const AlignmentDirectional(
                                                                             -0.96,
-                                                                            -0.42),
+                                                                            -0.16),
                                                                     child:
                                                                         Padding(
                                                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1613,41 +1501,21 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Flexible(
-                                                                                    child: InkWell(
-                                                                                      splashColor: Colors.transparent,
-                                                                                      focusColor: Colors.transparent,
-                                                                                      hoverColor: Colors.transparent,
-                                                                                      highlightColor: Colors.transparent,
-                                                                                      onTap: () async {
-                                                                                        context.pushNamed(
-                                                                                          'StoryIntro',
-                                                                                          queryParameters: {
-                                                                                            'passStoryInto1': serializeParam(
-                                                                                              containerRevisedDbRecord,
-                                                                                              ParamType.Document,
+                                                                                    child: Container(
+                                                                                      width: 361.0,
+                                                                                      height: 29.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).alternate,
+                                                                                      ),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        'Choose Your Own Adventure Story',
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w500,
                                                                                             ),
-                                                                                          }.withoutNulls,
-                                                                                          extra: <String, dynamic>{
-                                                                                            'passStoryInto1': containerRevisedDbRecord,
-                                                                                          },
-                                                                                        );
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: 361.0,
-                                                                                        height: 29.0,
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: FlutterFlowTheme.of(context).alternate,
-                                                                                        ),
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Choose Your Own Adventure Story',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Poppins',
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w500,
-                                                                                              ),
-                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -1658,40 +1526,20 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Flexible(
-                                                                                    child: InkWell(
-                                                                                      splashColor: Colors.transparent,
-                                                                                      focusColor: Colors.transparent,
-                                                                                      hoverColor: Colors.transparent,
-                                                                                      highlightColor: Colors.transparent,
-                                                                                      onTap: () async {
-                                                                                        context.pushNamed(
-                                                                                          'StoryIntro',
-                                                                                          queryParameters: {
-                                                                                            'passStoryInto1': serializeParam(
-                                                                                              containerRevisedDbRecord,
-                                                                                              ParamType.Document,
+                                                                                    child: Container(
+                                                                                      width: 461.0,
+                                                                                      height: 29.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                      ),
+                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        'Read Along Story',
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                              letterSpacing: 0.0,
                                                                                             ),
-                                                                                          }.withoutNulls,
-                                                                                          extra: <String, dynamic>{
-                                                                                            'passStoryInto1': containerRevisedDbRecord,
-                                                                                          },
-                                                                                        );
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: 461.0,
-                                                                                        height: 29.0,
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                        ),
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          'Read Along Story',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Poppins',
-                                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -1777,39 +1625,41 @@ class _LibraryWidgetState extends State<LibraryWidget>
                                                                                 ],
                                                                               ),
                                                                             ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Flexible(
-                                                                                    child: Wrap(
-                                                                                      spacing: 0.0,
-                                                                                      runSpacing: 0.0,
-                                                                                      alignment: WrapAlignment.start,
-                                                                                      crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                      direction: Axis.horizontal,
-                                                                                      runAlignment: WrapAlignment.start,
-                                                                                      verticalDirection: VerticalDirection.down,
-                                                                                      clipBehavior: Clip.none,
-                                                                                      children: [
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                          child: Text(
-                                                                                            containerRevisedDbRecord.description.maybeHandleOverflow(
-                                                                                              maxChars: 60,
-                                                                                              replacement: '…',
+                                                                            Flexible(
+                                                                              child: Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                                                                                child: Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Flexible(
+                                                                                      child: Wrap(
+                                                                                        spacing: 0.0,
+                                                                                        runSpacing: 0.0,
+                                                                                        alignment: WrapAlignment.start,
+                                                                                        crossAxisAlignment: WrapCrossAlignment.start,
+                                                                                        direction: Axis.horizontal,
+                                                                                        runAlignment: WrapAlignment.start,
+                                                                                        verticalDirection: VerticalDirection.down,
+                                                                                        clipBehavior: Clip.none,
+                                                                                        children: [
+                                                                                          Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                                                                                            child: Text(
+                                                                                              containerRevisedDbRecord.description.maybeHandleOverflow(
+                                                                                                maxChars: 60,
+                                                                                                replacement: '…',
+                                                                                              ),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Poppins',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
                                                                                             ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Poppins',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
                                                                                           ),
-                                                                                        ),
-                                                                                      ],
+                                                                                        ],
+                                                                                      ),
                                                                                     ),
-                                                                                  ),
-                                                                                ],
+                                                                                  ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ],

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -655,40 +656,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Flexible(
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      context.pushNamed(
-                                                                                        'StoryIntro',
-                                                                                        queryParameters: {
-                                                                                          'passStoryInto1': serializeParam(
-                                                                                            freeReadAlongNoSearchViewItem,
-                                                                                            ParamType.Document,
+                                                                                  child: Container(
+                                                                                    width: double.infinity,
+                                                                                    height: 29.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    ),
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      'Read Along Story',
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                            letterSpacing: 0.0,
                                                                                           ),
-                                                                                        }.withoutNulls,
-                                                                                        extra: <String, dynamic>{
-                                                                                          'passStoryInto1': freeReadAlongNoSearchViewItem,
-                                                                                        },
-                                                                                      );
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: double.infinity,
-                                                                                      height: 29.0,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                      ),
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Read Along Story',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -700,40 +681,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Flexible(
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      context.pushNamed(
-                                                                                        'StoryIntro',
-                                                                                        queryParameters: {
-                                                                                          'passStoryInto1': serializeParam(
-                                                                                            freeReadAlongNoSearchViewItem,
-                                                                                            ParamType.Document,
+                                                                                  child: Container(
+                                                                                    width: double.infinity,
+                                                                                    height: 29.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                                                    ),
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      'Choose Your Own Adventure Story',
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
                                                                                           ),
-                                                                                        }.withoutNulls,
-                                                                                        extra: <String, dynamic>{
-                                                                                          'passStoryInto1': freeReadAlongNoSearchViewItem,
-                                                                                        },
-                                                                                      );
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: double.infinity,
-                                                                                      height: 29.0,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                      ),
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Choose Your Own Adventure Story',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1078,40 +1039,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Flexible(
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      context.pushNamed(
-                                                                                        'StoryIntro',
-                                                                                        queryParameters: {
-                                                                                          'passStoryInto1': serializeParam(
-                                                                                            freeSearchViewItem,
-                                                                                            ParamType.Document,
+                                                                                  child: Container(
+                                                                                    width: double.infinity,
+                                                                                    height: 29.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                                                    ),
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      'Choose Your Own Adventure Story',
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
                                                                                           ),
-                                                                                        }.withoutNulls,
-                                                                                        extra: <String, dynamic>{
-                                                                                          'passStoryInto1': freeSearchViewItem,
-                                                                                        },
-                                                                                      );
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: double.infinity,
-                                                                                      height: 29.0,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                      ),
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Choose Your Own Adventure Story',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1123,40 +1064,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Flexible(
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      context.pushNamed(
-                                                                                        'StoryIntro',
-                                                                                        queryParameters: {
-                                                                                          'passStoryInto1': serializeParam(
-                                                                                            freeSearchViewItem,
-                                                                                            ParamType.Document,
+                                                                                  child: Container(
+                                                                                    width: double.infinity,
+                                                                                    height: 29.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    ),
+                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      'Read Along Story',
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                            letterSpacing: 0.0,
                                                                                           ),
-                                                                                        }.withoutNulls,
-                                                                                        extra: <String, dynamic>{
-                                                                                          'passStoryInto1': freeSearchViewItem,
-                                                                                        },
-                                                                                      );
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: double.infinity,
-                                                                                      height: 29.0,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                      ),
-                                                                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Read Along Story',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1380,7 +1301,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           crossAxisSpacing:
                                                               10.0,
                                                           mainAxisSpacing: 10.0,
-                                                          childAspectRatio: 0.8,
+                                                          childAspectRatio: 0.7,
                                                         ),
                                                         shrinkWrap: true,
                                                         scrollDirection:
@@ -1513,14 +1434,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       width: 361.0,
                                                                                       height: 29.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        color: FlutterFlowTheme.of(context).alternate,
                                                                                       ),
                                                                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                       child: Text(
                                                                                         'Choose Your Own Adventure Story',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                              color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -1670,39 +1591,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Flexible(
-                                                                                    child: Wrap(
-                                                                                      spacing: 0.0,
-                                                                                      runSpacing: 0.0,
-                                                                                      alignment: WrapAlignment.start,
-                                                                                      crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                      direction: Axis.horizontal,
-                                                                                      runAlignment: WrapAlignment.start,
-                                                                                      verticalDirection: VerticalDirection.down,
-                                                                                      clipBehavior: Clip.none,
-                                                                                      children: [
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                          child: Text(
-                                                                                            freeReadAlongNoSearchViewItem.description.maybeHandleOverflow(
-                                                                                              maxChars: 60,
-                                                                                              replacement: '…',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Poppins',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ],
+                                                                            Expanded(
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 100.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                                                                  child: SizedBox(
+                                                                                    width: double.infinity,
+                                                                                    height: double.infinity,
+                                                                                    child: custom_widgets.CustomTextWidget(
+                                                                                      width: double.infinity,
+                                                                                      height: double.infinity,
+                                                                                      textInput: freeReadAlongNoSearchViewItem.description,
                                                                                     ),
                                                                                   ),
-                                                                                ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -1769,7 +1676,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           crossAxisSpacing:
                                                               10.0,
                                                           mainAxisSpacing: 10.0,
-                                                          childAspectRatio: 0.8,
+                                                          childAspectRatio: 0.7,
                                                         ),
                                                         shrinkWrap: true,
                                                         scrollDirection:
@@ -1867,14 +1774,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       width: 361.0,
                                                                                       height: 29.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        color: FlutterFlowTheme.of(context).alternate,
                                                                                       ),
                                                                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                       child: Text(
                                                                                         'Choose Your Own Adventure Story',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Poppins',
-                                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                              color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -2253,40 +2160,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         children: [
                                                                           Flexible(
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'StoryIntro',
-                                                                                  queryParameters: {
-                                                                                    'passStoryInto1': serializeParam(
-                                                                                      isReadAlongItem,
-                                                                                      ParamType.Document,
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 29.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).alternate,
+                                                                              ),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Choose Your Own Adventure Story',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      letterSpacing: 0.0,
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    'passStoryInto1': isReadAlongItem,
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 29.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Choose Your Own Adventure Story',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -2300,40 +2187,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         children: [
                                                                           Flexible(
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'StoryIntro',
-                                                                                  queryParameters: {
-                                                                                    'passStoryInto1': serializeParam(
-                                                                                      isReadAlongItem,
-                                                                                      ParamType.Document,
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 29.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                              ),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Read Along Story',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                      letterSpacing: 0.0,
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    'passStoryInto1': isReadAlongItem,
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 29.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Read Along Story',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -2690,46 +2557,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       children: [
                                                                         Flexible(
                                                                           child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                'StoryIntro',
-                                                                                queryParameters: {
-                                                                                  'passStoryInto1': serializeParam(
-                                                                                    searchItem,
-                                                                                    ParamType.Document,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  'passStoryInto1': searchItem,
-                                                                                },
-                                                                              );
-                                                                            },
+                                                                              Container(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                29.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                            ),
+                                                                            alignment:
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
-                                                                                Container(
-                                                                              width: double.infinity,
-                                                                              height: 29.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
-                                                                                'Read Along Story',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
+                                                                                Text(
+                                                                              'Read Along Story',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -2744,46 +2590,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       children: [
                                                                         Flexible(
                                                                           child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                'StoryIntro',
-                                                                                queryParameters: {
-                                                                                  'passStoryInto1': serializeParam(
-                                                                                    searchItem,
-                                                                                    ParamType.Document,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  'passStoryInto1': searchItem,
-                                                                                },
-                                                                              );
-                                                                            },
+                                                                              Container(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                29.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                            ),
+                                                                            alignment:
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
-                                                                                Container(
-                                                                              width: double.infinity,
-                                                                              height: 29.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
-                                                                                'Choose Your Own Adventure Story',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
+                                                                                Text(
+                                                                              'Choose Your Own Adventure Story',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -3056,7 +2881,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         crossAxisCount: 3,
                                                         crossAxisSpacing: 10.0,
                                                         mainAxisSpacing: 10.0,
-                                                        childAspectRatio: 0.8,
+                                                        childAspectRatio: 0.7,
                                                       ),
                                                       shrinkWrap: true,
                                                       scrollDirection:
@@ -3448,7 +3273,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       crossAxisCount: 3,
                                                       crossAxisSpacing: 10.0,
                                                       mainAxisSpacing: 10.0,
-                                                      childAspectRatio: 0.8,
+                                                      childAspectRatio: 0.7,
                                                     ),
                                                     shrinkWrap: true,
                                                     scrollDirection:
@@ -3943,45 +3768,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         children: [
                                                                           Flexible(
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'StoryChapter',
-                                                                                  queryParameters: {
-                                                                                    'chapter': serializeParam(
-                                                                                      isAdventureItem.chapterRef,
-                                                                                      ParamType.DocumentReference,
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 29.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).alternate,
+                                                                              ),
+                                                                              alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Choose Your Own Adventure Story',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      letterSpacing: 0.0,
                                                                                     ),
-                                                                                    'pageNumber': serializeParam(
-                                                                                      0,
-                                                                                      ParamType.int,
-                                                                                    ),
-                                                                                    'isAdventureStory': serializeParam(
-                                                                                      isAdventureItem.isAdventure,
-                                                                                      ParamType.bool,
-                                                                                    ),
-                                                                                  }.withoutNulls,
-                                                                                );
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 29.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                ),
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Choose Your Own Adventure Story',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -4378,48 +4178,27 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     children: [
                                                                       Flexible(
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              'StoryReadAlongNew',
-                                                                              queryParameters: {
-                                                                                'readAlongDocRef': serializeParam(
-                                                                                  searchAdventureItem.readalongwhatever,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              29.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                          ),
+                                                                          alignment: const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
-                                                                              Container(
-                                                                            width:
-                                                                                double.infinity,
-                                                                            height:
-                                                                                29.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                            ),
-                                                                            alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'Read Along Story',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    letterSpacing: 0.0,
-                                                                                  ),
-                                                                            ),
+                                                                              Text(
+                                                                            'Read Along Story',
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Poppins',
+                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -4434,56 +4213,27 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     children: [
                                                                       Flexible(
                                                                         child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              'StoryChapter',
-                                                                              queryParameters: {
-                                                                                'chapter': serializeParam(
-                                                                                  searchAdventureItem.chapterRef,
-                                                                                  ParamType.DocumentReference,
-                                                                                ),
-                                                                                'pageNumber': serializeParam(
-                                                                                  0,
-                                                                                  ParamType.int,
-                                                                                ),
-                                                                                'isAdventureStory': serializeParam(
-                                                                                  searchAdventureItem.isFavorite,
-                                                                                  ParamType.bool,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
-                                                                          },
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              29.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).alternate,
+                                                                          ),
+                                                                          alignment: const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
-                                                                              Container(
-                                                                            width:
-                                                                                double.infinity,
-                                                                            height:
-                                                                                29.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                            ),
-                                                                            alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              'Choose Your Own Adventure Story',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    letterSpacing: 0.0,
-                                                                                  ),
-                                                                            ),
+                                                                              Text(
+                                                                            'Choose Your Own Adventure Story',
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Poppins',
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -4765,7 +4515,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       crossAxisCount: 3,
                                                       crossAxisSpacing: 10.0,
                                                       mainAxisSpacing: 10.0,
-                                                      childAspectRatio: 0.8,
+                                                      childAspectRatio: 0.7,
                                                     ),
                                                     shrinkWrap: true,
                                                     scrollDirection:
@@ -5147,7 +4897,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     crossAxisCount: 3,
                                                     crossAxisSpacing: 10.0,
                                                     mainAxisSpacing: 10.0,
-                                                    childAspectRatio: 0.8,
+                                                    childAspectRatio: 0.7,
                                                   ),
                                                   shrinkWrap: true,
                                                   scrollDirection:
