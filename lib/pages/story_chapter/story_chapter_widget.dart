@@ -188,6 +188,8 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                           pauseOnNavigate: true,
                           isAdventureStories: widget.isAdventureStory!,
                           autoPlay: FFAppState().autoPlay,
+                          fontSize: 18.0,
+                          textColor: FlutterFlowTheme.of(context).primary,
                           onCallAction: () async {
                             if (storyChapterChaptersRecord.pages.length !=
                                 ((widget.pageNumber!) + 1)) {

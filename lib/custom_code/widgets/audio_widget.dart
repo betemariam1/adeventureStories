@@ -23,6 +23,8 @@ class AudioWidget extends StatefulWidget {
       required this.pauseOnNavigate,
       required this.isAdventureStories,
       required this.autoPlay,
+      required this.fontSize,
+      required this.textColor,
       required this.onCallAction});
 
   final double? width;
@@ -33,6 +35,8 @@ class AudioWidget extends StatefulWidget {
   final bool pauseOnNavigate;
   final bool autoPlay;
   final bool isAdventureStories;
+  final double fontSize;
+  final Color textColor;
   final Future Function() onCallAction;
 
   @override
@@ -141,6 +145,14 @@ class _AudioWidgetState extends State<AudioWidget> with RouteAware {
                     children: [
                       Text(
                         widget.title,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  fontFamily: 'Poppins',
+                                  color: widget.textColor,
+                                  fontSize: widget.fontSize,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
                       ),
                     ],
                   ),

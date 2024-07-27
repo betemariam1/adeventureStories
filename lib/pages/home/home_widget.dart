@@ -1955,39 +1955,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 ],
                                                                               ),
                                                                             ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Flexible(
-                                                                                    child: Wrap(
-                                                                                      spacing: 0.0,
-                                                                                      runSpacing: 0.0,
-                                                                                      alignment: WrapAlignment.start,
-                                                                                      crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                      direction: Axis.horizontal,
-                                                                                      runAlignment: WrapAlignment.start,
-                                                                                      verticalDirection: VerticalDirection.down,
-                                                                                      clipBehavior: Clip.none,
-                                                                                      children: [
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                          child: Text(
-                                                                                            freeSearchViewItem.description.maybeHandleOverflow(
-                                                                                              maxChars: 60,
-                                                                                              replacement: '…',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Poppins',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ],
+                                                                            Expanded(
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 100.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                                                                  child: SizedBox(
+                                                                                    width: double.infinity,
+                                                                                    height: double.infinity,
+                                                                                    child: custom_widgets.CustomTextWidget(
+                                                                                      width: double.infinity,
+                                                                                      height: double.infinity,
+                                                                                      textInput: freeSearchViewItem.description,
                                                                                     ),
                                                                                   ),
-                                                                                ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ],
@@ -3176,38 +3162,26 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                          Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.all(12.0),
+                                                                          Expanded(
                                                                             child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Flexible(
-                                                                                  child: Wrap(
-                                                                                    spacing: 0.0,
-                                                                                    runSpacing: 0.0,
-                                                                                    alignment: WrapAlignment.start,
-                                                                                    crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                    direction: Axis.horizontal,
-                                                                                    runAlignment: WrapAlignment.start,
-                                                                                    verticalDirection: VerticalDirection.down,
-                                                                                    clipBehavior: Clip.none,
-                                                                                    children: [
-                                                                                      Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                        child: Text(
-                                                                                          isReadAlongItem.description.maybeHandleOverflow(maxChars: 60),
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Poppins',
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 100.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                              child: Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                                                                child: SizedBox(
+                                                                                  width: double.infinity,
+                                                                                  height: double.infinity,
+                                                                                  child: custom_widgets.CustomTextWidget(
+                                                                                    width: double.infinity,
+                                                                                    height: double.infinity,
+                                                                                    textInput: isReadAlongItem.description,
                                                                                   ),
                                                                                 ),
-                                                                              ],
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ],
@@ -3567,39 +3541,30 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                        Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.all(12.0),
+                                                                        Expanded(
                                                                           child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Flexible(
-                                                                                child: Wrap(
-                                                                                  spacing: 0.0,
-                                                                                  runSpacing: 0.0,
-                                                                                  alignment: WrapAlignment.start,
-                                                                                  crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                  direction: Axis.horizontal,
-                                                                                  runAlignment: WrapAlignment.start,
-                                                                                  verticalDirection: VerticalDirection.down,
-                                                                                  clipBehavior: Clip.none,
-                                                                                  children: [
-                                                                                    Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                      child: Text(
-                                                                                        searchItem.description.maybeHandleOverflow(maxChars: 60),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Poppins',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ],
+                                                                              Container(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                100.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                                                                              child: SizedBox(
+                                                                                width: double.infinity,
+                                                                                height: double.infinity,
+                                                                                child: custom_widgets.CustomTextWidget(
+                                                                                  width: double.infinity,
+                                                                                  height: double.infinity,
+                                                                                  textInput: searchItem.description,
                                                                                 ),
                                                                               ),
-                                                                            ],
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -4806,39 +4771,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           ],
                                                                         ),
                                                                       ),
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.all(12.0),
+                                                                      Expanded(
                                                                         child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Flexible(
-                                                                              child: Wrap(
-                                                                                spacing: 0.0,
-                                                                                runSpacing: 0.0,
-                                                                                alignment: WrapAlignment.start,
-                                                                                crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                direction: Axis.horizontal,
-                                                                                runAlignment: WrapAlignment.start,
-                                                                                verticalDirection: VerticalDirection.down,
-                                                                                clipBehavior: Clip.none,
-                                                                                children: [
-                                                                                  Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                    child: Text(
-                                                                                      searchAdventureItem.description.maybeHandleOverflow(maxChars: 60),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              100.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                6.0),
+                                                                            child:
+                                                                                SizedBox(
+                                                                              width: double.infinity,
+                                                                              height: double.infinity,
+                                                                              child: custom_widgets.CustomTextWidget(
+                                                                                width: double.infinity,
+                                                                                height: double.infinity,
+                                                                                textInput: searchAdventureItem.description,
                                                                               ),
                                                                             ),
-                                                                          ],
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -5194,39 +5156,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           ],
                                                                         ),
                                                                       ),
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.all(12.0),
+                                                                      Expanded(
                                                                         child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Flexible(
-                                                                              child: Wrap(
-                                                                                spacing: 0.0,
-                                                                                runSpacing: 0.0,
-                                                                                alignment: WrapAlignment.start,
-                                                                                crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                direction: Axis.horizontal,
-                                                                                runAlignment: WrapAlignment.start,
-                                                                                verticalDirection: VerticalDirection.down,
-                                                                                clipBehavior: Clip.none,
-                                                                                children: [
-                                                                                  Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
-                                                                                    child: Text(
-                                                                                      searchAdventureItem.description.maybeHandleOverflow(maxChars: 60),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              100.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                6.0),
+                                                                            child:
+                                                                                SizedBox(
+                                                                              width: double.infinity,
+                                                                              height: double.infinity,
+                                                                              child: custom_widgets.CustomTextWidget(
+                                                                                width: double.infinity,
+                                                                                height: double.infinity,
+                                                                                textInput: searchAdventureItem.description,
                                                                               ),
                                                                             ),
-                                                                          ],
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ],

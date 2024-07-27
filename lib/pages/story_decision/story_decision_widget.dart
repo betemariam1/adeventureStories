@@ -138,6 +138,8 @@ class _StoryDecisionWidgetState extends State<StoryDecisionWidget> {
                         pauseOnNavigate: true,
                         isAdventureStories: true,
                         autoPlay: false,
+                        fontSize: 18.0,
+                        textColor: FlutterFlowTheme.of(context).primary,
                         onCallAction: () async {},
                       ),
                     ),
