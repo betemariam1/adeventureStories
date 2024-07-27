@@ -154,6 +154,12 @@ class FFAppState extends ChangeNotifier {
   set isPlaying(bool value) {
     _isPlaying = value;
   }
+
+  bool _autoPlay = false;
+  bool get autoPlay => _autoPlay;
+  set autoPlay(bool value) {
+    _autoPlay = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

@@ -41,7 +41,7 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
     super.initState();
     _model = createModel(context, () => StoryChapterModel());
 
-    _model.autoPlayValue = false;
+    _model.autoPlayValue = FFAppState().autoPlay;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -149,6 +149,13 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                                     onChanged: (newValue) async {
                                       setState(() =>
                                           _model.autoPlayValue = newValue);
+                                      if (newValue) {
+                                        FFAppState().autoPlay = true;
+                                        setState(() {});
+                                      } else {
+                                        FFAppState().autoPlay = false;
+                                        setState(() {});
+                                      }
                                     },
                                     activeColor:
                                         FlutterFlowTheme.of(context).primary,
@@ -180,7 +187,7 @@ class _StoryChapterWidgetState extends State<StoryChapterWidget> {
                           playing: widget.playing,
                           pauseOnNavigate: true,
                           isAdventureStories: widget.isAdventureStory!,
-                          autoPlay: _model.autoPlayValue!,
+                          autoPlay: FFAppState().autoPlay,
                           onCallAction: () async {
                             if (storyChapterChaptersRecord.pages.length !=
                                 ((widget.pageNumber!) + 1)) {
