@@ -851,6 +851,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               width: double.infinity,
                                                                               height: double.infinity,
                                                                               textInput: freeReadAlongNoSearchViewItem.description,
+                                                                              maxLine: 3,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1221,6 +1222,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   width: double.infinity,
                                                                                   height: double.infinity,
                                                                                   textInput: freeSearchViewItem.description,
+                                                                                  maxLine: 3,
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1589,6 +1591,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       width: double.infinity,
                                                                                       height: double.infinity,
                                                                                       textInput: freeReadAlongNoSearchViewItem.description,
+                                                                                      maxLine: 6,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -1953,6 +1956,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       width: double.infinity,
                                                                                       height: double.infinity,
                                                                                       textInput: freeSearchViewItem.description,
+                                                                                      maxLine: 6,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -2347,35 +2351,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                    Padding(
-                                                                      padding:
-                                                                          const EdgeInsets.all(
-                                                                              12.0),
+                                                                    Expanded(
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children:
-                                                                            [
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0,
-                                                                                10.0),
-                                                                            child:
-                                                                                Text(
-                                                                              isReadAlongItem.description,
-                                                                              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    fontSize: 12.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                  ),
-                                                                            ),
+                                                                          Container(
+                                                                        width: double
+                                                                            .infinity,
+                                                                        height:
+                                                                            100.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              double.infinity,
+                                                                          child:
+                                                                              custom_widgets.CustomTextWidget(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                double.infinity,
+                                                                            textInput:
+                                                                                isReadAlongItem.description,
+                                                                            maxLine:
+                                                                                3,
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 4.0)),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -2763,33 +2768,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            12.0),
+                                                                  Expanded(
                                                                     child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children:
-                                                                          [
-                                                                        Text(
-                                                                          searchItem
-                                                                              .description,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .headlineMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                fontSize: 12.0,
-                                                                                letterSpacing: 0.0,
-                                                                              ),
+                                                                        Container(
+                                                                      width: double
+                                                                          .infinity,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width: double
+                                                                            .infinity,
+                                                                        height:
+                                                                            double.infinity,
+                                                                        child: custom_widgets
+                                                                            .CustomTextWidget(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              double.infinity,
+                                                                          textInput:
+                                                                              searchItem.description,
+                                                                          maxLine:
+                                                                              3,
                                                                         ),
-                                                                      ].divide(const SizedBox(
-                                                                              height: 4.0)),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -3161,6 +3169,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     width: double.infinity,
                                                                                     height: double.infinity,
                                                                                     textInput: isReadAlongItem.description,
+                                                                                    maxLine: 6,
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -3544,6 +3553,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   width: double.infinity,
                                                                                   height: double.infinity,
                                                                                   textInput: searchItem.description,
+                                                                                  maxLine: 6,
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -3951,27 +3961,36 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                    Padding(
-                                                                      padding:
-                                                                          const EdgeInsets.all(
-                                                                              12.0),
+                                                                    Expanded(
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children:
-                                                                            [
-                                                                          Text(
-                                                                            isAdventureItem.description,
-                                                                            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                  fontFamily: 'Poppins',
-                                                                                  fontSize: 12.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
+                                                                          Container(
+                                                                        width: double
+                                                                            .infinity,
+                                                                        height:
+                                                                            100.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              double.infinity,
+                                                                          child:
+                                                                              custom_widgets.CustomTextWidget(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                double.infinity,
+                                                                            textInput:
+                                                                                isAdventureItem.description,
+                                                                            maxLine:
+                                                                                3,
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 4.0)),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -4380,33 +4399,37 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     ),
                                                                   ],
                                                                 ),
-                                                                Padding(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                              12.0),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Text(
-                                                                        searchAdventureItem
-                                                                            .description,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .headlineMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              fontSize: 12.0,
-                                                                              letterSpacing: 0.0,
-                                                                            ),
-                                                                      ),
-                                                                    ].divide(const SizedBox(
+                                                                Expanded(
+                                                                  child:
+                                                                      Container(
+                                                                    width: double
+                                                                        .infinity,
+                                                                    height:
+                                                                        100.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        SizedBox(
+                                                                      width: double
+                                                                          .infinity,
+                                                                      height: double
+                                                                          .infinity,
+                                                                      child: custom_widgets
+                                                                          .CustomTextWidget(
+                                                                        width: double
+                                                                            .infinity,
                                                                         height:
-                                                                            4.0)),
+                                                                            double.infinity,
+                                                                        textInput:
+                                                                            searchAdventureItem.description,
+                                                                        maxLine:
+                                                                            3,
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ],
@@ -4780,6 +4803,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 width: double.infinity,
                                                                                 height: double.infinity,
                                                                                 textInput: searchAdventureItem.description,
+                                                                                maxLine: 6,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -5165,6 +5189,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 width: double.infinity,
                                                                                 height: double.infinity,
                                                                                 textInput: searchAdventureItem.description,
+                                                                                maxLine: 6,
                                                                               ),
                                                                             ),
                                                                           ),

@@ -16,11 +16,13 @@ class CustomTextWidget extends StatefulWidget {
     this.width,
     this.height,
     required this.textInput,
+    required this.maxLine,
   });
 
   final double? width;
   final double? height;
   final String textInput;
+  final int maxLine;
 
   @override
   State<CustomTextWidget> createState() => _CustomTextWidgetState();
@@ -35,7 +37,7 @@ class _CustomTextWidgetState extends State<CustomTextWidget> {
             fontFamily: 'Poppins',
             letterSpacing: 0.0,
           ),
-      maxLines: 6,
+      maxLines: widget.maxLine,
       overflow: TextOverflow.ellipsis,
     );
   }
