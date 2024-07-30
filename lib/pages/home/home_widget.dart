@@ -828,36 +828,31 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                      Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.all(12.0),
+                                                                      Expanded(
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children:
-                                                                              [
-                                                                            Wrap(
-                                                                              spacing: 0.0,
-                                                                              runSpacing: 0.0,
-                                                                              alignment: WrapAlignment.start,
-                                                                              crossAxisAlignment: WrapCrossAlignment.start,
-                                                                              direction: Axis.horizontal,
-                                                                              runAlignment: WrapAlignment.start,
-                                                                              verticalDirection: VerticalDirection.down,
-                                                                              clipBehavior: Clip.none,
-                                                                              children: [
-                                                                                Text(
-                                                                                  freeReadAlongNoSearchViewItem.description,
-                                                                                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        fontSize: 12.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
-                                                                              ],
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              100.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              SizedBox(
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                double.infinity,
+                                                                            child:
+                                                                                custom_widgets.CustomTextMobileWidget(
+                                                                              width: double.infinity,
+                                                                              height: double.infinity,
+                                                                              textInput: freeReadAlongNoSearchViewItem.description,
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 4.0)),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -1211,23 +1206,23 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                          Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.all(12.0),
+                                                                          Expanded(
                                                                             child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                              children: [
-                                                                                Text(
-                                                                                  freeSearchViewItem.description,
-                                                                                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        fontSize: 12.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 100.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                              child: SizedBox(
+                                                                                width: double.infinity,
+                                                                                height: double.infinity,
+                                                                                child: custom_widgets.CustomTextMobileWidget(
+                                                                                  width: double.infinity,
+                                                                                  height: double.infinity,
+                                                                                  textInput: freeSearchViewItem.description,
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 4.0)),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ],
