@@ -847,7 +847,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             height:
                                                                                 double.infinity,
                                                                             child:
-                                                                                custom_widgets.CustomTextMobileWidget(
+                                                                                custom_widgets.CustomTextWidget(
                                                                               width: double.infinity,
                                                                               height: double.infinity,
                                                                               textInput: freeReadAlongNoSearchViewItem.description,
@@ -1217,7 +1217,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               child: SizedBox(
                                                                                 width: double.infinity,
                                                                                 height: double.infinity,
-                                                                                child: custom_widgets.CustomTextMobileWidget(
+                                                                                child: custom_widgets.CustomTextWidget(
                                                                                   width: double.infinity,
                                                                                   height: double.infinity,
                                                                                   textInput: freeSearchViewItem.description,
