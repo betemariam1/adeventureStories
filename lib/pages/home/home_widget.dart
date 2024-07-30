@@ -563,321 +563,308 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   .primary,
                                                             ),
                                                           ),
-                                                          child: StreamBuilder<
-                                                              ReadAlongStoriesRecord>(
-                                                            stream: ReadAlongStoriesRecord
-                                                                .getDocument(
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'StoryChapter',
+                                                                queryParameters:
+                                                                    {
+                                                                  'chapter':
+                                                                      serializeParam(
                                                                     freeReadAlongNoSearchViewItem
-                                                                        .readalongwhatever!),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      LinearProgressIndicator(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
+                                                                        .chapterRef,
+                                                                    ParamType
+                                                                        .DocumentReference,
                                                                   ),
-                                                                );
-                                                              }
-
-                                                              final cardReadAlongStoriesRecord =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  context
-                                                                      .pushNamed(
-                                                                    'StoryChapter',
-                                                                    queryParameters:
-                                                                        {
-                                                                      'chapter':
-                                                                          serializeParam(
-                                                                        freeReadAlongNoSearchViewItem
-                                                                            .chapterRef,
-                                                                        ParamType
-                                                                            .DocumentReference,
-                                                                      ),
-                                                                      'pageNumber':
-                                                                          serializeParam(
-                                                                        0,
-                                                                        ParamType
-                                                                            .int,
-                                                                      ),
-                                                                      'isAdventureStory':
-                                                                          serializeParam(
-                                                                        freeReadAlongNoSearchViewItem
-                                                                            .isAdventure,
-                                                                        ParamType
-                                                                            .bool,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                  );
-                                                                },
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  elevation:
-                                                                      4.0,
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
+                                                                  'pageNumber':
+                                                                      serializeParam(
+                                                                    0,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                  'isAdventureStory':
+                                                                      serializeParam(
+                                                                    freeReadAlongNoSearchViewItem
+                                                                        .isAdventure,
+                                                                    ParamType
+                                                                        .bool,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: Card(
+                                                              clipBehavior: Clip
+                                                                  .antiAliasWithSaveLayer,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              elevation: 4.0,
+                                                              shape:
+                                                                  RoundedRectangleBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
                                                                             8.0),
-                                                                  ),
-                                                                  child: Stack(
+                                                              ),
+                                                              child: Stack(
+                                                                children: [
+                                                                  Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
                                                                     children: [
-                                                                      Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          if (!freeReadAlongNoSearchViewItem
-                                                                              .isAdventure)
-                                                                            Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Flexible(
-                                                                                  child: Container(
-                                                                                    width: double.infinity,
-                                                                                    height: 29.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      'Read Along Story',
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
+                                                                      if (!freeReadAlongNoSearchViewItem
+                                                                          .isAdventure)
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Flexible(
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 29.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).primary,
                                                                                 ),
-                                                                              ],
-                                                                            ),
-                                                                          if (freeReadAlongNoSearchViewItem
-                                                                              .isAdventure)
-                                                                            Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Flexible(
-                                                                                  child: Container(
-                                                                                    width: double.infinity,
-                                                                                    height: 29.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).alternate,
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      'Choose Your Own Adventure Story',
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0),
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    freeReadAlongNoSearchViewItem.storyName,
-                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          fontFamily: 'Poppins',
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          fontSize: 14.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                          Stack(
-                                                                            children: [
-                                                                              Align(
                                                                                 alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
-                                                                                  child: ClipRRect(
-                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                    child: Image.network(
-                                                                                      freeReadAlongNoSearchViewItem.cardImageSmall,
-                                                                                      width: double.infinity,
-                                                                                      height: 220.0,
-                                                                                      fit: BoxFit.cover,
-                                                                                    ),
-                                                                                  ),
+                                                                                child: Text(
+                                                                                  'Read Along Story',
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
-                                                                              if (freeReadAlongNoSearchViewItem.isNew == true)
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                                                                                  child: ClipRRect(
-                                                                                    borderRadius: BorderRadius.circular(8.0),
-                                                                                    child: Image.asset(
-                                                                                      'assets/images/NewPurple001.gif',
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      fit: BoxFit.cover,
-                                                                                    ),
-                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      if (freeReadAlongNoSearchViewItem
+                                                                          .isAdventure)
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Flexible(
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 29.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
                                                                                 ),
-                                                                              Align(
-                                                                                alignment: const AlignmentDirectional(0.0, 0.95),
-                                                                                child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 175.0, 20.0, 0.0),
-                                                                                  child: Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.end,
-                                                                                    children: [
-                                                                                      if (freeReadAlongNoSearchViewItem.isFavoritedByUser.contains(currentUserReference) == false)
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.24, 0.2),
-                                                                                          child: FlutterFlowIconButton(
-                                                                                            borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                            borderRadius: 20.0,
-                                                                                            borderWidth: 1.0,
-                                                                                            buttonSize: 40.0,
-                                                                                            fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                            icon: FaIcon(
-                                                                                              FontAwesomeIcons.heart,
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 24.0,
-                                                                                            ),
-                                                                                            onPressed: () async {
-                                                                                              await currentUserReference!.update({
-                                                                                                ...mapToFirestore(
-                                                                                                  {
-                                                                                                    'favorited': FieldValue.arrayUnion([
-                                                                                                      freeReadAlongNoSearchViewItem.reference
-                                                                                                    ]),
-                                                                                                  },
-                                                                                                ),
-                                                                                              });
-                                                                                              // Add to Library
-
-                                                                                              await freeReadAlongNoSearchViewItem.reference.update({
-                                                                                                ...mapToFirestore(
-                                                                                                  {
-                                                                                                    'IsFavoritedByUser': FieldValue.arrayUnion([currentUserReference]),
-                                                                                                  },
-                                                                                                ),
-                                                                                              });
-                                                                                            },
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (freeReadAlongNoSearchViewItem.isFavoritedByUser.contains(currentUserReference) == true)
-                                                                                        Align(
-                                                                                          alignment: const AlignmentDirectional(0.9, 0.2),
-                                                                                          child: FlutterFlowIconButton(
-                                                                                            borderColor: FlutterFlowTheme.of(context).primary,
-                                                                                            borderRadius: 20.0,
-                                                                                            borderWidth: 1.0,
-                                                                                            buttonSize: 40.0,
-                                                                                            fillColor: FlutterFlowTheme.of(context).accent1,
-                                                                                            icon: FaIcon(
-                                                                                              FontAwesomeIcons.solidHeart,
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 24.0,
-                                                                                            ),
-                                                                                            onPressed: () async {
-                                                                                              await currentUserReference!.update({
-                                                                                                ...mapToFirestore(
-                                                                                                  {
-                                                                                                    'favorited': FieldValue.arrayRemove([
-                                                                                                      freeReadAlongNoSearchViewItem.reference
-                                                                                                    ]),
-                                                                                                  },
-                                                                                                ),
-                                                                                              });
-                                                                                              // RemoveFromLibrary
-
-                                                                                              await freeReadAlongNoSearchViewItem.reference.update({
-                                                                                                ...mapToFirestore(
-                                                                                                  {
-                                                                                                    'IsFavoritedByUser': FieldValue.arrayRemove([currentUserReference]),
-                                                                                                  },
-                                                                                                ),
-                                                                                              });
-                                                                                            },
-                                                                                          ),
-                                                                                        ),
-                                                                                    ],
-                                                                                  ),
+                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                child: Text(
+                                                                                  'Choose Your Own Adventure Story',
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
-                                                                            ],
-                                                                          ),
-                                                                          Padding(
-                                                                            padding:
-                                                                                const EdgeInsets.all(12.0),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                freeReadAlongNoSearchViewItem.storyName,
+                                                                                style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      fontSize: 14.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      Stack(
+                                                                        children: [
+                                                                          Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Wrap(
-                                                                                  spacing: 0.0,
-                                                                                  runSpacing: 0.0,
-                                                                                  alignment: WrapAlignment.start,
-                                                                                  crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                  direction: Axis.horizontal,
-                                                                                  runAlignment: WrapAlignment.start,
-                                                                                  verticalDirection: VerticalDirection.down,
-                                                                                  clipBehavior: Clip.none,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      freeReadAlongNoSearchViewItem.description,
-                                                                                      style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            fontSize: 10.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.network(
+                                                                                  freeReadAlongNoSearchViewItem.cardImageSmall,
+                                                                                  width: double.infinity,
+                                                                                  height: 220.0,
+                                                                                  fit: BoxFit.cover,
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 4.0)),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          if (freeReadAlongNoSearchViewItem.isNew ==
+                                                                              true)
+                                                                            Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                child: Image.asset(
+                                                                                  'assets/images/NewPurple001.gif',
+                                                                                  width: 50.0,
+                                                                                  height: 50.0,
+                                                                                  fit: BoxFit.cover,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                const AlignmentDirectional(0.0, 0.95),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 175.0, 20.0, 0.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.end,
+                                                                                children: [
+                                                                                  if (freeReadAlongNoSearchViewItem.isFavoritedByUser.contains(currentUserReference) == false)
+                                                                                    Align(
+                                                                                      alignment: const AlignmentDirectional(0.24, 0.2),
+                                                                                      child: FlutterFlowIconButton(
+                                                                                        borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                        borderRadius: 20.0,
+                                                                                        borderWidth: 1.0,
+                                                                                        buttonSize: 40.0,
+                                                                                        fillColor: FlutterFlowTheme.of(context).accent1,
+                                                                                        icon: FaIcon(
+                                                                                          FontAwesomeIcons.heart,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        onPressed: () async {
+                                                                                          await currentUserReference!.update({
+                                                                                            ...mapToFirestore(
+                                                                                              {
+                                                                                                'favorited': FieldValue.arrayUnion([
+                                                                                                  freeReadAlongNoSearchViewItem.reference
+                                                                                                ]),
+                                                                                              },
+                                                                                            ),
+                                                                                          });
+                                                                                          // Add to Library
+
+                                                                                          await freeReadAlongNoSearchViewItem.reference.update({
+                                                                                            ...mapToFirestore(
+                                                                                              {
+                                                                                                'IsFavoritedByUser': FieldValue.arrayUnion([
+                                                                                                  currentUserReference
+                                                                                                ]),
+                                                                                              },
+                                                                                            ),
+                                                                                          });
+                                                                                        },
+                                                                                      ),
+                                                                                    ),
+                                                                                  if (freeReadAlongNoSearchViewItem.isFavoritedByUser.contains(currentUserReference) == true)
+                                                                                    Align(
+                                                                                      alignment: const AlignmentDirectional(0.9, 0.2),
+                                                                                      child: FlutterFlowIconButton(
+                                                                                        borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                        borderRadius: 20.0,
+                                                                                        borderWidth: 1.0,
+                                                                                        buttonSize: 40.0,
+                                                                                        fillColor: FlutterFlowTheme.of(context).accent1,
+                                                                                        icon: FaIcon(
+                                                                                          FontAwesomeIcons.solidHeart,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                        onPressed: () async {
+                                                                                          await currentUserReference!.update({
+                                                                                            ...mapToFirestore(
+                                                                                              {
+                                                                                                'favorited': FieldValue.arrayRemove([
+                                                                                                  freeReadAlongNoSearchViewItem.reference
+                                                                                                ]),
+                                                                                              },
+                                                                                            ),
+                                                                                          });
+                                                                                          // RemoveFromLibrary
+
+                                                                                          await freeReadAlongNoSearchViewItem.reference.update({
+                                                                                            ...mapToFirestore(
+                                                                                              {
+                                                                                                'IsFavoritedByUser': FieldValue.arrayRemove([
+                                                                                                  currentUserReference
+                                                                                                ]),
+                                                                                              },
+                                                                                            ),
+                                                                                          });
+                                                                                        },
+                                                                                      ),
+                                                                                    ),
+                                                                                ],
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
+                                                                      Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(12.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Wrap(
+                                                                              spacing: 0.0,
+                                                                              runSpacing: 0.0,
+                                                                              alignment: WrapAlignment.start,
+                                                                              crossAxisAlignment: WrapCrossAlignment.start,
+                                                                              direction: Axis.horizontal,
+                                                                              runAlignment: WrapAlignment.start,
+                                                                              verticalDirection: VerticalDirection.down,
+                                                                              clipBehavior: Clip.none,
+                                                                              children: [
+                                                                                Text(
+                                                                                  freeReadAlongNoSearchViewItem.description,
+                                                                                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        fontSize: 12.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ].divide(const SizedBox(height: 4.0)),
+                                                                        ),
+                                                                      ),
                                                                     ],
                                                                   ),
-                                                                ),
-                                                              );
-                                                            },
+                                                                ],
+                                                              ),
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1236,7 +1223,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                   freeSearchViewItem.description,
                                                                                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                         fontFamily: 'Poppins',
-                                                                                        fontSize: 10.0,
+                                                                                        fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
@@ -2388,7 +2375,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               isReadAlongItem.description,
                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                     fontFamily: 'Poppins',
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -2802,7 +2789,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               .headlineMedium
                                                                               .override(
                                                                                 fontFamily: 'Poppins',
-                                                                                fontSize: 10.0,
+                                                                                fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
@@ -3985,7 +3972,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             isAdventureItem.description,
                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                   fontFamily: 'Poppins',
-                                                                                  fontSize: 10.0,
+                                                                                  fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -4418,7 +4405,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             .headlineMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
-                                                                              fontSize: 10.0,
+                                                                              fontSize: 12.0,
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -4606,14 +4593,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                 width: 361.0,
                                                                                 height: 29.0,
                                                                                 decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
                                                                                 ),
                                                                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                 child: Text(
                                                                                   'Choose Your Own Adventure Story',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Poppins',
-                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),

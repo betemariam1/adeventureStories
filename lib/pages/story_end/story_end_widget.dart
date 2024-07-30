@@ -86,7 +86,7 @@ class _StoryEndWidgetState extends State<StoryEndWidget> {
                         child: Image.asset(
                           'assets/images/YouDidIt.png',
                           width: double.infinity,
-                          height: 1000.0,
+                          height: 940.0,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -162,16 +162,16 @@ class _StoryEndWidgetState extends State<StoryEndWidget> {
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (storyEndRevisedDbRecord.isReadAlong == true)
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 100.0, 0.0, 0.0),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (storyEndRevisedDbRecord.isReadAlong == true)
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed('Home');
@@ -204,13 +204,9 @@ class _StoryEndWidgetState extends State<StoryEndWidget> {
                             ),
                           ),
                         ),
-                      ),
-                    if (storyEndRevisedDbRecord.isAdventure == true)
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 100.0, 0.0, 0.0),
+                      if (storyEndRevisedDbRecord.isAdventure == true)
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
@@ -259,8 +255,8 @@ class _StoryEndWidgetState extends State<StoryEndWidget> {
                             ),
                           ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
